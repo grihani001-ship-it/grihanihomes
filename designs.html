@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grihani Homes - Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --bg-color: #f8f9fa; --text-color: #333; --navy-blue: #0A1128; --terracotta: #D35400; --border-color: #D4AF37; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-color); transition: 0.3s; }
+
+        header {
+            background: #080E1A; border-bottom: 2px solid var(--border-color);
+            color: #fff; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center;
+        }
+        .brand-name { font-size: 22px; font-weight: 900; background: linear-gradient(to bottom, #FFE599, #D4AF37); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+        .back-home { color: #fff; text-decoration: none; font-size: 14px; border: 1px solid var(--border-color); padding: 6px 15px; border-radius: 5px; transition: 0.3s; }
+        .back-home:hover { background: var(--border-color); color: #000; }
+
+        .page-banner {
+            background: linear-gradient(rgba(5,11,20,0.8), rgba(5,11,20,0.8)), url('https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1200');
+            background-size: cover; background-position: center;
+            color: #fff; text-align: center; padding: 80px 20px;
+        }
+        .page-banner h1 { font-size: 40px; color: #D4AF37; margin-bottom: 15px; text-transform: uppercase; }
+        .page-banner p { font-size: 18px; max-width: 700px; margin: 0 auto; color: #ddd; }
+
+        .content-section { max-width: 900px; margin: 50px auto; padding: 0 20px; text-align: center; }
+        .content-section h3 { font-size: 28px; color: var(--terracotta); margin-bottom: 20px; }
+        .content-section p { font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 30px; }
+        
+        .cta-box { background: #0A1128; color: #fff; padding: 40px; border-radius: 10px; border: 1px solid var(--border-color); margin-top: 40px; }
+        .cta-box h4 { font-size: 24px; color: #D4AF37; margin-bottom: 15px; }
+        .cta-btn { display: inline-block; background: var(--terracotta); color: #fff; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 15px; }
+
+        footer { background: #080E1A; color: #fff; text-align: center; padding: 20px; margin-top: 80px; border-top: 2px solid var(--border-color); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="grihanihomes.html" class="brand-name">GRIHANI HOMES</a>
+        <a href="grihanihomes.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+    </header>
+
+    <div class="page-banner">
+        <h1 id="pageTitle">Loading...</h1>
+        <p id="pageDesc">Please wait while we fetch your requested service details.</p>
+    </div>
+
+    <div class="content-section">
+        <h3 id="subHeading">Excellence in Every Brick & Detail</h3>
+        <p id="detailText">Grihani Homes delivers uncompromised quality, structural integrity, and modern aesthetics tailored precisely to your requirements. Contact us today to start your dream project.</p>
+        
+        <div class="cta-box">
+            <h4>Want a Free Estimate for this Project?</h4>
+            <p style="color: #ccc;">Get in touch with our expert engineers and architects right now via WhatsApp.</p>
+            <a href="grihanihomes.html#contact" class="cta-btn">Get Free Estimate ➔</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Grihani Homes. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // URL से पहचानना कि किस सब-ऑप्शन पर क्लिक किया गया है
+        const urlParams = new URLSearchParams(window.location.search);
+        const type = urlParams.get('type');
+
+        const data = {
+            // Construction Options
+            "residential": { title: "Residential Construction", desc: "Building strong, beautiful, and personalized homes tailored for your family." },
+            "commercial": { title: "Commercial Construction", desc: "High-performance offices, retail spaces, and complexes designed for business success." },
+            "academic": { title: "Academic Construction", desc: "Safe, spacious, and modern educational institutions, schools, and colleges." },
+            "hospital": { title: "Hospital Construction", desc: "Specialized healthcare infrastructure built with precision, hygiene, and safety norms." },
+            "hotel": { title: "Hotel Construction", desc: "Luxurious, aesthetic, and welcoming hospitality spaces built to impress guests." },
+            "mall": { title: "Mall Construction", desc: "Large-scale retail and entertainment hubs engineered for massive footfall." },
+
+            // Design Options
+            "floor": { title: "Floor Plan", desc: "Smart, space-efficient, and Vastu-compliant 2D layout planning." },
+            "structural": { title: "Structural Plan", desc: "Earthquake-resistant, high-strength structural design engineered by experts." },
+            "plumbing": { title: "Plumbing Plan", desc: "Advanced water supply, drainage, and leakage-free pipeline layouts." },
+            "electrical": { title: "Electrical Plan", desc: "Safe, load-calculated wiring and smart lighting blueprints." },
+            "hvac": { title: "HVAC Plan", desc: "Optimized heating, ventilation, and air conditioning system layouts." },
+            "3d": { title: "3D Floor Plan", realistic: true, title: "3D Floor Plan", desc: "Lifelike 3D visual walkthroughs of your future home before construction begins." },
+
+            // Interior Options
+            "residential-int": { title: "Residential Interior", desc: "Stunning living rooms, modular kitchens, and cozy bedrooms tailored to your lifestyle." },
+            "commercial-int": { title: "Commercial Interior", desc: "Professional and inspiring corporate interiors that boost productivity." },
+            "hospitality-int": { title: "Hospitality Interior", desc: "Exquisite interiors for hotels, cafes, and restaurants offering great client experiences." },
+            "academic-int": { title: "Academic Interior", desc: "Engaging and creative interiors designed specifically for schools and learning centers." }
+        };
+
+        if (type && data[type]) {
+            document.getElementById('pageTitle').textContent = data[type].title;
+            document.getElementById('pageDesc').textContent = data[type].desc;
+            document.title = data[type].title + " - Grihani Homes";
+        } else {
+            document.getElementById('pageTitle').textContent = "Our Professional Services";
+            document.getElementById('pageDesc').textContent = "Explore our wide range of expert construction, design, and interior solutions.";
+        }
+    </script>
+</body>
+</html>

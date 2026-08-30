@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grihani Homes - Premium Construction</title>
+    <!-- FontAwesome Icons for Social Media -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --card-bg: rgba(15, 23, 42, 0.92);
+            --navy-blue: #0A1128;
+            --terracotta: #D35400;
+            --whatsapp-green: #25D366;
+            --border-color: rgba(212, 175, 55, 0.4);
+        }
+
+        body.dark-mode {
+            --bg-color: #121212;
+            --text-color: #f1f1f1;
+            --card-bg: #1e1e1e;
+            --navy-blue: #0b1528;
+            --border-color: #444;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-color); transition: background 0.3s, color 0.3s; scroll-behavior: smooth; }
+
+        header {
+            background: #080E1A; border-bottom: 2px solid #D4AF37; color: #fff; padding: 12px 40px;
+            display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.8);
+        }
+
+        .brand-container { display: flex; align-items: center; gap: 12px; text-decoration: none; cursor: pointer; }
+        .brand-logo img { height: 48px; width: auto; object-fit: contain; background: transparent; }
+        .brand-text-box { display: flex; flex-direction: column; gap: 4px; }
+        .brand-name { font-size: 22px; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; background: linear-gradient(to bottom, #FFE599 0%, #D4AF37 50%, #996515 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.9)); }
+
+        .header-social-icons { display: flex; gap: 8px; align-items: center; }
+        .header-social-icons a { color: #D4AF37; font-size: 13px; text-decoration: none; width: 24px; height: 24px; border-radius: 50%; background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.3); display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+        .header-social-icons a:hover { background: #D4AF37; color: #080E1A; transform: translateY(-2px); }
+
+        nav { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+        nav > a { color: #f1f1f1; text-decoration: none; font-size: 14px; font-weight: 500; transition: 0.3s; }
+        nav > a:hover { color: #D4AF37; }
+
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown > a { color: #f1f1f1; text-decoration: none; font-size: 14px; font-weight: 500; transition: 0.3s; }
+        .dropdown > a:hover { color: #D4AF37; }
+        .dropdown-content { display: none; position: absolute; background-color: #080E1A; min-width: 210px; box-shadow: 0px 8px 16px rgba(0,0,0,0.5); z-index: 1001; border-top: 2px solid #D4AF37; top: 100%; left: 0; }
+        .dropdown-content a { color: white; padding: 10px 14px; text-decoration: none; display: block; font-size: 13px; }
+        .dropdown-content a:hover { background-color: #1A2B4C; color: #D4AF37; }
+        .dropdown:hover .dropdown-content { display: block; }
+
+        .nav-buttons { display: flex; gap: 8px; align-items: center; }
+        .action-btn { background: rgba(212, 175, 55, 0.1); border: 1px solid #D4AF37; color: #D4AF37; padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 13px; font-weight: bold; transition: 0.3s; }
+        .action-btn:hover { background: #D4AF37; color: #000; }
+
+        .hero { position: relative; padding: 60px 5% 80px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; overflow: hidden; background-color: #000; }
+        .hero-video { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: 0; transform: translateX(-50%) translateY(-50%); object-fit: cover; opacity: 0.6; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5, 11, 20, 0.7); z-index: 1; }
+        .hero-center-logo { position: relative; z-index: 2; text-align: center; margin-bottom: 30px; }
+        .hero-center-logo img { height: 100px; width: auto; object-fit: contain; background: transparent; filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.8)); }
+        .hero-center-logo h1 { margin-top: 10px; font-size: 32px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; background: linear-gradient(to bottom, #FFE599 0%, #D4AF37 50%, #996515 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.9)); }
+        .hero-content { position: relative; z-index: 2; width: 100%; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; }
+        .hero-text { flex: 1; min-width: 300px; padding-right: 40px; color: #fff; }
+        .hero-text h2 { font-size: 36px; margin-bottom: 20px; line-height: 1.2; text-shadow: 2px 2px 6px rgba(0,0,0,0.8); }
+        .hero-text p { font-size: 18px; margin-bottom: 30px; line-height: 1.5; color: #f1f1f1; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); }
+
+        .btn-primary { background-color: var(--terracotta); color: #fff; padding: 12px 25px; border-radius: 5px; font-size: 16px; font-weight: bold; cursor: pointer; text-decoration: none; border: none; box-shadow: 0 4px 15px rgba(211, 84, 0, 0.4); }
+        
+        .lead-form { background-color: var(--card-bg); color: #fff; backdrop-filter: blur(12px); border: 1.5px solid rgba(212, 175, 55, 0.4); padding: 30px; border-radius: 12px; width: 100%; max-width: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.7); }
+        .lead-form h3 { margin-bottom: 15px; color: #D4AF37; font-size: 22px; text-align: center; }
+        .lead-form input, .lead-form select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background-color: rgba(255, 255, 255, 0.08); color: #fff; font-size: 15px; }
+        .lead-form select option { background: #1A2B4C; color: #fff; }
+        .btn-submit { width: 100%; background: linear-gradient(135deg, #D35400, #E67E22); color: #fff; padding: 12px; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.5); transition: 0.3s; }
+        .btn-submit:hover { opacity: 0.9; }
+
+        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0, 0, 0, 0.6); color: #D4AF37; border: 2px solid #D4AF37; border-radius: 50%; width: 50px; height: 50px; font-size: 20px; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+        .slider-btn:hover { background: #D4AF37; color: #000; }
+        .slider-btn.prev { left: 20px; }
+        .slider-btn.next { right: 20px; }
+
+        .concept-section { padding: 40px 5%; background-color: var(--bg-color); }
+        .concept-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+        .concept-card { background-color: var(--card-bg); border-radius: 15px; overflow: hidden; width: 320px; box-shadow: 0 6px 20px rgba(0,0,0,0.1); border: 1px solid var(--border-color); display: flex; flex-direction: column; transition: 0.3s; }
+        .concept-card:hover { transform: translateY(-5px); }
+        .concept-card img { width: 100%; height: 220px; object-fit: cover; }
+        .concept-card-content { padding: 20px; text-align: left; }
+        .concept-card-content h3 { color: #D4AF37; font-size: 22px; margin-bottom: 10px; }
+        .concept-card-content p { font-size: 14px; line-height: 1.5; color: #f1f1f1; opacity: 0.85; }
+
+        .reels-section { padding: 60px 0; background-color: var(--bg-color); text-align: center; overflow: hidden; }
+        .marquee-wrapper { display: flex; width: 100%; overflow: hidden; white-space: nowrap; position: relative; margin-top: 25px; }
+        .marquee-track { display: flex; gap: 30px; align-items: center; animation: scrollMarquee 25s linear infinite; }
+        .reel-card { min-width: 260px; height: 420px; background: var(--card-bg); border-radius: 12px; border: 2px solid #D4AF37; padding: 12px; display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+        .reel-card video { width: 100%; height: 350px; object-fit: cover; border-radius: 8px; }
+        .reel-card p { margin-top: 8px; font-size: 13px; font-weight: bold; color: #f1f1f1; white-space: normal; }
+
+        .section-title { text-align: center; font-size: 32px; margin-bottom: 40px; color: var(--terracotta); padding-top: 60px; }
+        .service-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; padding: 0 5% 60px; }
+        .service-card { background-color: var(--card-bg); color: #fff; padding: 30px; border-radius: 8px; width: 100%; max-width: 280px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-bottom: 4px solid #D4AF37; }
+        .service-card h4 { margin-bottom: 15px; color: #D4AF37; font-size: 20px; }
+        .service-card p { font-size: 15px; line-height: 1.6; color: #ddd; }
+
+        .gallery-grid { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; padding: 0 5% 60px; }
+        .gallery-grid img { width: 300px; height: 200px; object-fit: cover; border-radius: 8px; cursor: pointer; transition: 0.3s; }
+        .gallery-grid img:hover { transform: scale(1.05); }
+
+        .trust-brands-section { padding: 50px 0; background: transparent; text-align: center; overflow: hidden; }
+        .trust-brands-section h2 { font-size: 36px; font-weight: 900; color: #D4AF37; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .trust-brands-section p { font-size: 16px; max-width: 700px; margin: 0 auto 30px; color: var(--text-color); opacity: 0.9; }
+        .brand-logo-item { min-width: 160px; height: 70px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .brand-logo-item img { max-height: 60px; max-width: 150px; object-fit: contain; background: transparent; mix-blend-mode: multiply; filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1)); }
+
+        @keyframes scrollMarquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        #lightbox { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
+        #lightbox img { max-width: 90%; max-height: 90%; border-radius: 8px; }
+        #lightbox-close { position: absolute; top: 20px; right: 40px; color: white; font-size: 40px; cursor: pointer; }
+
+        footer { background: linear-gradient(135deg, #050b14 0%, #101c30 100%); color: #fff; text-align: center; padding: 20px; border-top: 2px solid #D4AF37; }
+        .whatsapp-float { position: fixed; width: 160px; height: 50px; bottom: 30px; right: 30px; background-color: var(--whatsapp-green); color: #fff; border-radius: 25px; display: flex; align-items: center; justify-content: center; font-weight: bold; text-decoration: none; z-index: 1000; box-shadow: 2px 2px 15px rgba(0,0,0,0.3); transition: 0.3s; }
+        .whatsapp-float:hover { transform: scale(1.05); }
+
+        @media (max-width: 768px) {
+            .hero-content { flex-direction: column; text-align: center; }
+            .hero-text { padding-right: 0; margin-bottom: 30px; }
+            header { flex-direction: column; gap: 15px; padding: 12px 20px; }
+            .whatsapp-float { width: 50px; height: 50px; border-radius: 50%; font-size: 0; }
+            .whatsapp-float::after { content: "💬"; font-size: 24px; }
+            .slider-btn { width: 35px; height: 35px; font-size: 14px; }
+            .slider-btn.prev { left: 5px; }
+            .slider-btn.next { right: 5px; }
+            .hero-center-logo img { height: 75px; }
+            .hero-center-logo h1 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand-container">
+            <a href="#" class="brand-logo">
+                <img id="dynamicLogoImg" src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Logo">
+            </a>
+            <div class="brand-text-box">
+                <span class="brand-name" id="dynamicLogoText">GRIHANI HOMES</span>
+                <div class="header-social-icons">
+                    <a href="https://facebook.com/yourpage" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/yourpage" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/yourpage" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <nav>
+            <a href="#">Home</a>
+
+            <div class="dropdown">
+                <a href="designs.html">Design ▾</a>
+                <div class="dropdown-content">
+                    <a href="designs.html?type=floor">Floor Plan</a>
+                    <a href="designs.html?type=structural">Structural Plan</a>
+                    <a href="designs.html?type=plumbing">Plumbing Plan</a>
+                    <a href="designs.html?type=electrical">Electrical Plan</a>
+                    <a href="designs.html?type=hvac">HVAC Plan</a>
+                    <a href="designs.html?type=3d">3D Floor Plan</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a href="construction.html">Construction ▾</a>
+                <div class="dropdown-content">
+                    <a href="construction.html?type=residential">Residential Construction</a>
+                    <a href="construction.html?type=commercial">Commercial Construction</a>
+                    <a href="construction.html?type=academic">Academic Construction</a>
+                    <a href="construction.html?type=hospital">Hospital Construction</a>
+                    <a href="construction.html?type=hotel">Hotel Construction</a>
+                    <a href="construction.html?type=mall">Mall Construction</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a href="interiors.html">Interiors ▾</a>
+                <div class="dropdown-content">
+                    <a href="interiors.html?type=residential">Residential Interior</a>
+                    <a href="interiors.html?type=commercial">Commercial Interior</a>
+                    <a href="interiors.html?type=hospitality">Hospitality Interior</a>
+                    <a href="interiors.html?type=academic">Academic Interior</a>
+                </div>
+            </div>
+
+            <a href="#services">Services</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact Us</a>
+
+            <div class="nav-buttons">
+                <button id="theme-toggle" class="action-btn">🌙 Dark</button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <video id="heroBgVideo" autoplay muted playsinline class="hero-video">
+            <!-- Video src added via JS -->
+        </video>
+
+        <button class="slider-btn prev" id="prevBtn" title="Previous Video">&#10094;</button>
+        <button class="slider-btn next" id="nextBtn" title="Next Video">&#10095;</button>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-center-logo">
+            <img id="heroLogoImg" src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Hero Logo">
+            <h1 id="heroLogoText">GRIHANI HOMES</h1>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2>Strong Foundation, Great Design—Build Your Dream Home!</h2>
+                <p>Complete construction (with material) or labor contract—we complete every project with 100% quality.</p>
+                <a href="#services" class="btn-primary">View Our Services</a>
+            </div>
+
+            <div class="lead-form" id="contact">
+                <h3>Get Free Estimate!</h3>
+                <form id="contactForm">
+                    <input type="text" id="userName" placeholder="Your Full Name" required>
+                    <input type="tel" id="userPhone" placeholder="WhatsApp Number" required>
+                    <select id="projectType" required><option value="">Select Project Type</option></select>
+                    <input type="text" id="userCity" placeholder="City (e.g. Patna)" required>
+                    <button type="submit" class="btn-submit">Send on WhatsApp ➔</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="concept-section" id="concepts">
+        <div class="concept-grid">
+            <div class="concept-card">
+                <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Design">
+                <div class="concept-card-content">
+                    <h3>Design</h3>
+                    <p>From floor plans to façade, our expert architects craft smart, aesthetic spaces tailored to your needs.</p>
+                </div>
+            </div>
+            <div class="concept-card">
+                <img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Construction">
+                <div class="concept-card-content">
+                    <h3>Construction</h3>
+                    <p>We take care of everything – delivering structurally sound, earthquake-resistant buildings.</p>
+                </div>
+            </div>
+            <div class="concept-card">
+                <img src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Interiors">
+                <div class="concept-card-content">
+                    <h3>Interiors</h3>
+                    <p>Our interior designers transform spaces into elegant, functional environments. From modular kitchens to custom finishes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reels-section" id="reels">
+        <h2 class="section-title" style="padding-top: 0; margin-bottom: 10px;">Our Instagram Reels & Site Videos</h2>
+        <p style="margin-bottom: 20px; color: var(--text-color);">Check out glimpses of our ongoing projects and quality work</p>
+        <div class="marquee-wrapper"><div class="marquee-track" id="reelsTrack"></div></div>
+    </section>
+
+    <h2 class="section-title" id="services">Our Services</h2>
+    <div class="service-grid">
+        <div class="service-card">
+            <h4>Complete Construction</h4>
+            <p>Total responsibility from foundation to finishing. We use premium quality materials so durability lasts for years.</p>
+        </div>
+        <div class="service-card">
+            <h4>Labor Contract</h4>
+            <p>Prefer buying materials yourself? Our skilled team delivers brilliant construction on a labor-contract basis.</p>
+        </div>
+        <div class="service-card">
+            <h4>Home Renovation</h4>
+            <p>Give your old home a fresh, stylish look. From concrete pillars to flooring, we renovate every part.</p>
+        </div>
+        <div class="service-card">
+            <h4>100% Quality Inspection</h4>
+            <p>Strict quality checks are performed on every site for brickwork, casting, and formwork.</p>
+        </div>
+    </div>
+
+    <h2 class="section-title" id="gallery">Project Gallery</h2>
+    <div class="gallery-grid" id="galleryContainer"></div>
+
+    <div id="lightbox">
+        <span id="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="">
+    </div>
+
+    <section class="trust-brands-section">
+        <h2>Brands That Build Trust</h2>
+        <p>We use only the most trusted brands to ensure long-lasting strength.</p>
+        <div class="marquee-wrapper"><div class="marquee-track" id="brandsTrack"></div></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Grihani Homes. All Rights Reserved.</p>
+    </footer>
+
+    <a href="#" class="whatsapp-float" target="_blank" id="wa-float">💬 WhatsApp Now</a>
+
+    <script>
+        // ==========================================
+        // MEDIA CONTROL PANEL (यहाँ डायनेमिक लिंक्स पेस्ट करें)
+        // ==========================================
+
+        const WHATSAPP_NUMBER = "918987263648"; // अपना व्हाट्सएप नंबर डालें
+        const BRAND_NAME = "GRIHANI HOMES";
+        
+        // 👉 अपना लोगो यहाँ सेट करें (फ़ाइल का नाम जैसे "logo.png" या कोई लिंक डालें)
+        const LOGO_URL = "Grihani homes logo.png";
+
+        // 1. हीरो वीडियो लिंक्स
+        const HERO_VIDEOS = [
+            "video1.mp4",
+	    "video2.mp4",
+	    "video3.mp4"    
+    ];
+
+        // 2. रील्स के वीडियो
+        const INSTAGRAM_REELS = [
+            { url: "https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-construction-worker-working-42171-large.mp4", caption: "Column casting work at site" },
+            { url: "https://assets.mixkit.co/videos/preview/mixkit-construction-worker-with-a-hard-hat-42175-large.mp4", caption: "Strong brickwork and quality inspection" },
+            { url: "https://assets.mixkit.co/videos/preview/mixkit-workers-pouring-concrete-at-a-construction-site-42173-large.mp4", caption: "Premium home finishing and design" }
+        ];
+
+        // 3. गैलरी इमेजेज
+        const GALLERY_IMAGES = [
+            "https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=600"
+        ];
+
+        // 4. ब्रांड लोगो
+        const BRANDS_LOGOS = [
+            "https://images.pexels.com/photos/276514/pexels-photo-276514.jpeg?auto=compress&cs=tinysrgb&w=200",
+            "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=200",
+            "https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&cs=tinysrgb&w=200"
+        ];
+
+        // ==========================================
+        // AUTO-GENERATION LOGIC (इसे न बदलें)
+        // ==========================================
+
+        // लोगो और ब्रांड नेम अपडेट करें
+        document.getElementById('dynamicLogoImg').src = LOGO_URL;
+        document.getElementById('dynamicLogoText').textContent = BRAND_NAME;
+        document.getElementById('heroLogoImg').src = LOGO_URL;
+        document.getElementById('heroLogoText').textContent = BRAND_NAME;
+
+        document.getElementById('wa-float').href = `https://wa.me/${WHATSAPP_NUMBER}`;
+
+        // Theme Toggle
+        const themeBtn = document.getElementById('theme-toggle');
+        themeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            themeBtn.innerText = document.body.classList.contains('dark-mode') ? '☀️ Light' : '🌙 Dark';
+        });
+
+        // Setup Reels
+        const reelsTrack = document.getElementById('reelsTrack');
+        INSTAGRAM_REELS.concat(INSTAGRAM_REELS).forEach(reel => {
+            let card = document.createElement('div');
+            card.className = 'reel-card';
+            card.innerHTML = `<video controls muted playsinline loop autoplay><source src="${reel.url}" type="video/mp4"></video><p>${reel.caption}</p>`;
+            reelsTrack.appendChild(card);
+        });
+
+        // Setup Gallery
+        window.openLightbox = function(src) {
+            document.getElementById('lightbox').style.display = 'flex';
+            document.getElementById('lightbox-img').src = src;
+        };
+        window.closeLightbox = function() { document.getElementById('lightbox').style.display = 'none'; };
+        
+        const galleryContainer = document.getElementById('galleryContainer');
+        GALLERY_IMAGES.forEach(function(imageUrl) {
+            let img = document.createElement('img');
+            img.src = imageUrl;
+            img.alt = "Project Image";
+            img.onclick = function() { openLightbox(imageUrl); };
+            galleryContainer.appendChild(img);
+        });
+
+        // Setup Brands
+        const brandsTrack = document.getElementById('brandsTrack');
+        BRANDS_LOGOS.concat(BRANDS_LOGOS).forEach(logo => {
+            let item = document.createElement('div');
+            item.className = 'brand-logo-item';
+            item.innerHTML = `<img src="${logo}" alt="Brand Logo">`;
+            brandsTrack.appendChild(item);
+        });
+
+        // Setup Form
+        const projectList = ["New House (With Material)", "New House (Labor Contract)", "Commercial Building", "Apartment", "Hospital", "College", "Home Renovation"];
+        const projectSelect = document.getElementById('projectType');
+        projectList.forEach(function(project) {
+            let option = document.createElement('option');
+            option.value = project;
+            option.textContent = project;
+            projectSelect.appendChild(option);
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('userName').value;
+            var phone = document.getElementById('userPhone').value;
+            var project = document.getElementById('projectType').value;
+            var city = document.getElementById('userCity').value;
+            var message = `*New Lead from Website*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Project:* ${project}%0A*City:* ${city}%0A%0APlease contact me.`;
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
+        });
+
+        // Hero Video Navigation
+        let currentVideo = 0;
+        const bgVideo = document.getElementById('heroBgVideo');
+        bgVideo.src = HERO_VIDEOS[currentVideo];
+        
+        function changeVideo(dir) {
+            if (dir === 'next') currentVideo = (currentVideo + 1) % HERO_VIDEOS.length;
+            else currentVideo = (currentVideo - 1 + HERO_VIDEOS.length) % HERO_VIDEOS.length;
+            bgVideo.src = HERO_VIDEOS[currentVideo];
+            bgVideo.play();
+        }
+        bgVideo.addEventListener('ended', () => changeVideo('next'));
+        document.getElementById('nextBtn').addEventListener('click', () => changeVideo('next'));
+        document.getElementById('prevBtn').addEventListener('click', () => changeVideo('prev'));
+    </script>
