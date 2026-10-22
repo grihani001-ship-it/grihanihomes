@@ -13,7 +13,6 @@
             --navy-blue: #0A1128;
             --terracotta: #D35400;
             --whatsapp-green: #25D366;
-            --border-color: rgba(212, 175, 55, 0.4);
             --gold: #D4AF37;
         }
 
@@ -22,7 +21,6 @@
             --text-color: #f1f1f1;
             --card-bg: #1e1e1e;
             --navy-blue: #0b1528;
-            --border-color: #444;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
@@ -58,79 +56,121 @@
         .action-btn { background: rgba(212, 175, 55, 0.1); border: 1px solid var(--gold); color: var(--gold); padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 13px; font-weight: bold; transition: 0.3s; }
         .action-btn:hover { background: var(--gold); color: #000; }
 
+        /* Hero Section */
         .hero { position: relative; padding: 60px 5% 80px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; overflow: hidden; background-color: #000; }
         .hero-video { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: 0; transform: translateX(-50%) translateY(-50%); object-fit: cover; opacity: 0.6; }
-        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5, 11, 20, 0.7); z-index: 1; }
-        .hero-center-logo { position: relative; z-index: 2; text-align: center; margin-bottom: 30px; }
-        .hero-center-logo img { height: 100px; width: auto; object-fit: contain; background: transparent; filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.8)); }
-        .hero-center-logo h1 { margin-top: 10px; font-size: 32px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; background: linear-gradient(to bottom, #FFE599 0%, #D4AF37 50%, #996515 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.9)); }
-        .hero-content { position: relative; z-index: 2; width: 100%; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; }
-        .hero-text { flex: 1; min-width: 300px; padding-right: 40px; color: #fff; }
-        .hero-text h2 { font-size: 36px; margin-bottom: 20px; line-height: 1.2; text-shadow: 2px 2px 6px rgba(0,0,0,0.8); }
-        .hero-text p { font-size: 18px; margin-bottom: 30px; line-height: 1.5; color: #f1f1f1; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5, 11, 20, 0.72); z-index: 1; }
+        .hero-center-logo { position: relative; z-index: 2; text-align: center; margin-bottom: 25px; }
+        .hero-center-logo img { height: 95px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.8)); }
+        .hero-center-logo h1 { margin-top: 8px; font-size: 32px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; background: linear-gradient(to bottom, #FFE599 0%, #D4AF37 50%, #996515 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-content { position: relative; z-index: 2; width: 100%; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 30px; }
+        .hero-text { flex: 1; min-width: 320px; color: #fff; }
+        .hero-text h2 { font-size: 34px; margin-bottom: 18px; line-height: 1.25; text-shadow: 2px 2px 6px rgba(0,0,0,0.8); }
+        .hero-text p { font-size: 16px; margin-bottom: 22px; line-height: 1.5; color: #f1f1f1; }
 
-        .btn-primary { background-color: var(--terracotta); color: #fff; padding: 12px 25px; border-radius: 5px; font-size: 16px; font-weight: bold; cursor: pointer; text-decoration: none; border: none; box-shadow: 0 4px 15px rgba(211, 84, 0, 0.4); }
+        /* Special Offer Badge & Card */
+        .special-offer-card {
+            background: linear-gradient(135deg, rgba(211, 84, 0, 0.25), rgba(10, 17, 40, 0.85));
+            border: 2px dashed var(--gold);
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+            max-width: 520px;
+        }
+        .offer-tag {
+            display: inline-block;
+            background: var(--terracotta);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .offer-headline {
+            font-size: 22px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+        .offer-price {
+            color: #FFE599;
+            font-size: 26px;
+            font-weight: 900;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+        .offer-terms {
+            font-size: 11px;
+            color: #ccc;
+            margin-top: 6px;
+            font-style: italic;
+        }
+
+        .btn-primary { background-color: var(--terracotta); color: #fff; padding: 12px 25px; border-radius: 5px; font-size: 15px; font-weight: bold; cursor: pointer; text-decoration: none; border: none; display: inline-block; box-shadow: 0 4px 15px rgba(211, 84, 0, 0.4); }
         
-        .lead-form { background-color: var(--card-bg); color: #fff; backdrop-filter: blur(12px); border: 1.5px solid rgba(212, 175, 55, 0.4); padding: 30px; border-radius: 12px; width: 100%; max-width: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.7); }
+        .lead-form { background-color: var(--card-bg); color: #fff; backdrop-filter: blur(12px); border: 1.5px solid rgba(212, 175, 55, 0.4); padding: 30px; border-radius: 12px; width: 100%; max-width: 390px; box-shadow: 0 10px 30px rgba(0,0,0,0.7); }
         .lead-form h3 { margin-bottom: 15px; color: var(--gold); font-size: 22px; text-align: center; }
-        .lead-form input, .lead-form select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background-color: rgba(255, 255, 255, 0.08); color: #fff; font-size: 15px; }
+        .lead-form input, .lead-form select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background-color: rgba(255, 255, 255, 0.08); color: #fff; font-size: 14px; }
         .lead-form select option { background: #1A2B4C; color: #fff; }
-        .btn-submit { width: 100%; background: linear-gradient(135deg, #D35400, #E67E22); color: #fff; padding: 12px; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.5); transition: 0.3s; }
+        .btn-submit { width: 100%; background: linear-gradient(135deg, #D35400, #E67E22); color: #fff; padding: 12px; border: none; border-radius: 6px; font-size: 15px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.5); transition: 0.3s; }
         .btn-submit:hover { opacity: 0.9; }
 
-        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0, 0, 0, 0.6); color: var(--gold); border: 2px solid var(--gold); border-radius: 50%; width: 50px; height: 50px; font-size: 20px; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0, 0, 0, 0.6); color: var(--gold); border: 2px solid var(--gold); border-radius: 50%; width: 48px; height: 48px; font-size: 18px; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
         .slider-btn:hover { background: var(--gold); color: #000; }
         .slider-btn.prev { left: 20px; }
         .slider-btn.next { right: 20px; }
 
-        .section-title { text-align: center; font-size: 32px; margin-bottom: 40px; color: var(--terracotta); padding-top: 60px; }
+        .section-title { text-align: center; font-size: 32px; margin-bottom: 30px; color: var(--terracotta); padding-top: 60px; }
 
         /* Pricing Section */
         .pricing-section { padding: 60px 20px; background-color: #fff; }
         .container { max-width: 1200px; margin: 0 auto; }
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px;}
-        .pricing-card { background: #fff; border: 1px solid #ddd; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); display: flex; flex-direction: column; transition: transform 0.3s ease; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 35px; }
+        .pricing-card { background: #fff; border: 1px solid #ddd; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); display: flex; flex-direction: column; transition: transform 0.3s ease; }
         .pricing-card:hover { transform: translateY(-5px); }
         .pricing-card.featured { border: 2px solid var(--gold); }
         .card-img img { width: 100%; height: 200px; object-fit: cover; }
-        .card-content { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; }
-        .card-content h3 { font-size: 22px; color: var(--navy-blue); margin-bottom: 10px; }
-        .price { font-size: 24px; font-weight: bold; color: var(--terracotta); margin-bottom: 15px; }
+        .card-content { padding: 22px; display: flex; flex-direction: column; flex-grow: 1; }
+        .card-content h3 { font-size: 21px; color: var(--navy-blue); margin-bottom: 10px; }
+        .price { font-size: 23px; font-weight: bold; color: var(--terracotta); margin-bottom: 12px; }
         .price .unit { font-size: 14px; color: #666; font-weight: normal; }
-        .card-content p { font-size: 14px; color: #555; line-height: 1.6; margin-bottom: 20px; }
-        .features { list-style: none; padding: 0; margin-bottom: 25px; }
-        .features li { font-size: 14px; color: #333; margin-bottom: 10px; padding-left: 25px; position: relative; }
+        .card-content p { font-size: 13.5px; color: #555; line-height: 1.55; margin-bottom: 18px; }
+        .features { list-style: none; padding: 0; margin-bottom: 22px; }
+        .features li { font-size: 13.5px; color: #333; margin-bottom: 9px; padding-left: 22px; position: relative; }
         .features li::before { content: "✓"; color: #27ae60; font-weight: bold; position: absolute; left: 0; }
-        .btn-quote { background-color: var(--terracotta); color: #fff; padding: 12px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; transition: background-color 0.3s ease; align-self: center; width: 100%; text-decoration: none; text-align: center;}
+        .btn-quote { background-color: var(--terracotta); color: #fff; padding: 11px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; align-self: center; width: 100%; text-decoration: none; text-align: center; }
         .btn-quote:hover { background-color: #b34600; }
 
         /* Reels Section */
-        .reels-section { padding: 60px 0; background-color: var(--bg-color); text-align: center; overflow: hidden; }
-        .marquee-wrapper { display: flex; width: 100%; overflow: hidden; white-space: nowrap; position: relative; margin-top: 25px; }
-        .marquee-track { display: flex; gap: 30px; align-items: center; animation: scrollMarquee 25s linear infinite; }
-        .reel-card { min-width: 260px; height: 420px; background: var(--card-bg); border-radius: 12px; border: 2px solid var(--gold); padding: 12px; display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+        .reels-section { padding: 50px 0; background-color: var(--bg-color); text-align: center; overflow: hidden; }
+        .marquee-wrapper { display: flex; width: 100%; overflow: hidden; white-space: nowrap; position: relative; margin-top: 20px; }
+        .marquee-track { display: flex; gap: 25px; align-items: center; animation: scrollMarquee 25s linear infinite; }
+        .reel-card { min-width: 260px; height: 420px; background: var(--card-bg); border-radius: 12px; border: 2px solid var(--gold); padding: 10px; display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
         .reel-card video { width: 100%; height: 350px; object-fit: cover; border-radius: 8px; }
         .reel-card p { margin-top: 8px; font-size: 13px; font-weight: bold; color: #f1f1f1; white-space: normal; }
 
-        .service-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; padding: 0 5% 60px; }
-        .service-card { background-color: var(--card-bg); color: #fff; padding: 30px; border-radius: 8px; width: 100%; max-width: 280px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-bottom: 4px solid var(--gold); }
-        .service-card h4 { margin-bottom: 15px; color: var(--gold); font-size: 20px; }
-        .service-card p { font-size: 15px; line-height: 1.6; color: #ddd; }
+        .service-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; padding: 0 5% 50px; }
+        .service-card { background-color: var(--card-bg); color: #fff; padding: 25px; border-radius: 8px; width: 100%; max-width: 270px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-bottom: 4px solid var(--gold); }
+        .service-card h4 { margin-bottom: 12px; color: var(--gold); font-size: 19px; }
+        .service-card p { font-size: 14px; line-height: 1.6; color: #ddd; }
 
-        .gallery-grid { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; padding: 0 5% 60px; }
-        .gallery-grid img { width: 300px; height: 200px; object-fit: cover; border-radius: 8px; cursor: pointer; transition: 0.3s; }
-        .gallery-grid img:hover { transform: scale(1.05); }
+        .gallery-grid { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; padding: 0 5% 50px; }
+        .gallery-grid img { width: 310px; height: 210px; object-fit: cover; border-radius: 8px; cursor: pointer; transition: 0.3s; }
+        .gallery-grid img:hover { transform: scale(1.04); }
 
-        .trust-brands-section { padding: 50px 0; background: transparent; text-align: center; overflow: hidden; }
-        .trust-brands-section h2 { font-size: 36px; font-weight: 900; color: var(--gold); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
-        .trust-brands-section p { font-size: 16px; max-width: 700px; margin: 0 auto 30px; color: var(--text-color); opacity: 0.9; }
+        .trust-brands-section { padding: 45px 0; background: transparent; text-align: center; overflow: hidden; }
+        .trust-brands-section h2 { font-size: 32px; font-weight: 900; color: var(--gold); margin-bottom: 8px; text-transform: uppercase; }
+        .trust-brands-section p { font-size: 15px; max-width: 700px; margin: 0 auto 25px; color: var(--text-color); opacity: 0.9; }
         .brand-logo-item { min-width: 160px; height: 70px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: #fff; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .brand-logo-item img { max-height: 50px; max-width: 140px; object-fit: contain; background: transparent; mix-blend-mode: multiply; }
+        .brand-logo-item img { max-height: 50px; max-width: 140px; object-fit: contain; }
 
         /* Plan Your Project Section */
-        .plan-project-section { padding: 60px 20px; background-color: #f4f6f9; }
-        .plan-form-container { max-width: 600px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-top: 4px solid var(--terracotta); }
-        .plan-form-container input, .plan-form-container textarea { width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 5px; font-size: 15px; background-color: #fafafa; }
+        .plan-project-section { padding: 60px 20px 80px; background-color: #eef2f6; }
+        .plan-form-container { max-width: 580px; margin: 0 auto; background: #fff; padding: 35px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 5px solid var(--terracotta); }
+        .plan-form-container input, .plan-form-container textarea { width: 100%; padding: 14px; margin-bottom: 16px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; background-color: #fafafa; }
         .plan-form-container input:focus, .plan-form-container textarea:focus { border-color: var(--terracotta); outline: none; background-color: #fff; }
 
         @keyframes scrollMarquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
@@ -139,38 +179,30 @@
         #lightbox img { max-width: 90%; max-height: 90%; border-radius: 8px; }
         #lightbox-close { position: absolute; top: 20px; right: 40px; color: white; font-size: 40px; cursor: pointer; }
 
-        footer { background: linear-gradient(135deg, #050b14 0%, #101c30 100%); color: #fff; text-align: center; padding: 20px; padding-bottom: 100px; border-top: 2px solid var(--gold); }
+        footer { background: linear-gradient(135deg, #050b14 0%, #101c30 100%); color: #fff; text-align: center; padding: 25px; padding-bottom: 100px; border-top: 2px solid var(--gold); }
         
-        /* WhatsApp Button - Moved UP & Renamed to Chat Now */
-        .whatsapp-float { position: fixed; width: 160px; height: 50px; bottom: 100px; right: 30px; background-color: var(--whatsapp-green); color: #fff; border-radius: 25px; display: flex; align-items: center; justify-content: center; font-weight: bold; text-decoration: none; z-index: 1001; box-shadow: 2px 2px 15px rgba(0,0,0,0.3); transition: 0.3s; }
+        /* Floating Chat Now Button */
+        .whatsapp-float { position: fixed; width: 150px; height: 48px; bottom: 85px; right: 25px; background-color: var(--whatsapp-green); color: #fff; border-radius: 24px; display: flex; align-items: center; justify-content: center; font-weight: bold; text-decoration: none; z-index: 1001; box-shadow: 2px 4px 15px rgba(0,0,0,0.3); transition: 0.3s; }
         .whatsapp-float:hover { transform: scale(1.05); }
 
-        /* Attractive Floating Contact Bar */
-        .floating-contact-bar { position: fixed; bottom: -100px; left: 0; width: 100%; background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); border-top: 3px solid var(--gold); color: #fff; padding: 15px 20px; z-index: 1000; box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: center; gap: 30px; transition: bottom 0.4s ease-in-out; }
+        /* Floating Contact Bar */
+        .floating-contact-bar { position: fixed; bottom: -100px; left: 0; width: 100%; background: linear-gradient(135deg, #0a1128, #182848); border-top: 3px solid var(--gold); color: #fff; padding: 14px 20px; z-index: 1000; box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.4); display: flex; justify-content: center; align-items: center; gap: 25px; transition: bottom 0.35s ease; }
         .floating-contact-bar.show { bottom: 0; }
-        .floating-contact-bar h3 { margin: 0; font-size: 18px; color: var(--gold); text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
-        .floating-contact-bar form { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
-        .floating-contact-bar input { padding: 12px; border-radius: 5px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.1); color: #fff; width: 220px; font-size: 14px; }
-        .floating-contact-bar input::placeholder { color: #ccc; }
-        .floating-contact-bar button { background: linear-gradient(135deg, #D35400, #E67E22); color: #fff; padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; box-shadow: 0 4px 10px rgba(211, 84, 0, 0.4); }
-        .floating-contact-bar button:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(211, 84, 0, 0.6); }
+        .floating-contact-bar h3 { margin: 0; font-size: 17px; color: var(--gold); }
+        .floating-contact-bar form { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+        .floating-contact-bar input { padding: 10px 14px; border-radius: 5px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.12); color: #fff; width: 200px; font-size: 13.5px; }
+        .floating-contact-bar input::placeholder { color: #ddd; }
+        .floating-contact-bar button { background: linear-gradient(135deg, #D35400, #E67E22); color: #fff; padding: 10px 22px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        .floating-contact-bar button:hover { opacity: 0.95; }
 
         @media (max-width: 768px) {
             .hero-content { flex-direction: column; text-align: center; }
-            .hero-text { padding-right: 0; margin-bottom: 30px; }
-            header { flex-direction: column; gap: 15px; padding: 12px 20px; }
-            
-            /* Mobile Chat Now Button */
-            .whatsapp-float { width: 50px; height: 50px; border-radius: 50%; font-size: 0; bottom: 180px; right: 20px; }
-            .whatsapp-float::after { content: "💬"; font-size: 24px; }
-            
-            .slider-btn { width: 35px; height: 35px; font-size: 14px; }
-            .slider-btn.prev { left: 5px; }
-            .slider-btn.next { right: 5px; }
-            .hero-center-logo img { height: 75px; }
-            .hero-center-logo h1 { font-size: 24px; }
-            
-            .floating-contact-bar { flex-direction: column; gap: 15px; text-align: center; }
+            .hero-text { min-width: 100%; }
+            .special-offer-card { margin: 0 auto 25px; }
+            header { flex-direction: column; gap: 12px; padding: 12px 20px; }
+            .whatsapp-float { width: 48px; height: 48px; border-radius: 50%; font-size: 0; bottom: 180px; right: 18px; }
+            .whatsapp-float::after { content: "💬"; font-size: 22px; }
+            .floating-contact-bar { flex-direction: column; gap: 10px; text-align: center; }
             .floating-contact-bar form { flex-direction: column; width: 100%; }
             .floating-contact-bar input, .floating-contact-bar button { width: 100%; }
         }
@@ -228,7 +260,7 @@
             </div>
             <a href="#services">Services</a>
             <a href="#gallery">Gallery</a>
-            <a href="#contact">Contact Us</a>
+            <a href="#plan-project">Consultation</a>
             <div class="nav-buttons">
                 <button id="theme-toggle" class="action-btn">🌙 Dark</button>
             </div>
@@ -248,6 +280,15 @@
             <div class="hero-text">
                 <h2>Strong Foundation, Great Design—Build Your Dream Home!</h2>
                 <p>Complete construction (with material) or labor contract—we complete every project with 100% quality.</p>
+                
+                <!-- NEW SPECIAL OFFER SECTION -->
+                <div class="special-offer-card">
+                    <span class="offer-tag">Exclusive Limited Offer</span>
+                    <div class="offer-headline">अपना नया घर बनवाएं सिर्फ</div>
+                    <div class="offer-price">₹999 / sq.ft में</div>
+                    <div class="offer-terms">*Terms & Conditions Apply</div>
+                </div>
+
                 <a href="#services" class="btn-primary">View Our Services</a>
             </div>
             <div class="lead-form" id="contact">
@@ -263,11 +304,12 @@
         </div>
     </section>
 
+    <!-- Pricing / Construction Cost Section -->
     <section class="pricing-section">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title" style="padding-top:0;">Home Construction Cost Per Sqft</h2>
-          <p style="text-align: center; color: #666; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">Average residential construction costs in Gurgaon can start from ₹1,250 to ₹4,500 per sqft depending on the quality of finishes.</p>
+          <p style="text-align: center; color: #666; margin-bottom: 35px; max-width: 700px; margin-left: auto; margin-right: auto;">Average residential construction costs in Gurgaon can start from ₹1,250 to ₹4,500 per sqft depending on the quality of finishes.</p>
         </div>
 
         <div class="pricing-grid">
@@ -285,7 +327,7 @@
                 <li>Tractor Emulsion finish</li>
                 <li>Essential kitchen & bathroom fittings</li>
               </ul>
-              <a href="#contact" class="btn-quote">GET A QUOTE</a>
+              <a href="#plan-project" class="btn-quote">GET A QUOTE</a>
             </div>
           </div>
 
@@ -303,7 +345,7 @@
                 <li>Stylish kitchen & bathroom</li>
                 <li>High-Grade Bricks</li>
               </ul>
-              <a href="#contact" class="btn-quote">GET A QUOTE</a>
+              <a href="#plan-project" class="btn-quote">GET A QUOTE</a>
             </div>
           </div>
 
@@ -322,11 +364,10 @@
                 <li>Textured Designer Paint</li>
                 <li>AAC Blocks / High-Grade Bricks</li>
               </ul>
-              <a href="#contact" class="btn-quote">GET A QUOTE</a>
+              <a href="#plan-project" class="btn-quote">GET A QUOTE</a>
             </div>
           </div>
 
-          <!-- Premium Finishing Image Fixed -->
           <div class="pricing-card">
             <div class="card-img">
               <img src="https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&d=2" alt="Premium Finishing">
@@ -343,16 +384,17 @@
                 <li>AAC Blocks / High-Grade Bricks</li>
                 <li>Bespoke Designer Kitchen & Wardrobes</li>
               </ul>
-              <a href="#contact" class="btn-quote">GET A QUOTE</a>
+              <a href="#plan-project" class="btn-quote">GET A QUOTE</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Reels Section -->
     <section class="reels-section" id="reels">
         <h2 class="section-title" style="padding-top: 0; margin-bottom: 10px;">Our Instagram Reels & Site Videos</h2>
-        <p style="margin-bottom: 20px; color: var(--text-color);">Check out glimpses of our ongoing projects and quality work</p>
+        <p style="margin-bottom: 15px; color: var(--text-color);">Check out glimpses of our ongoing projects and quality work</p>
         <div class="marquee-wrapper"><div class="marquee-track" id="reelsTrack"></div></div>
     </section>
 
@@ -390,18 +432,18 @@
         <div class="marquee-wrapper"><div class="marquee-track" id="brandsTrack"></div></div>
     </section>
 
-    <!-- NEW: Plan Your Project Section -->
+    <!-- Plan Your Project (Connects to WhatsApp) -->
     <section class="plan-project-section" id="plan-project">
         <div class="container">
             <h2 class="section-title" style="padding-top:0;">Plan Your Project</h2>
-            <p style="text-align:center; color: #666; margin-bottom: 40px;">Start with an initial quality assessment & execution idea.</p>
+            <p style="text-align:center; color: #666; margin-bottom: 35px;">Book an initial quality assessment and get in touch directly.</p>
             <div class="plan-form-container">
                 <form id="planYourProjectForm">
                     <input type="text" id="planName" placeholder="* FULL NAME" required>
                     <input type="tel" id="planPhone" placeholder="* PHONE NUMBER" required>
                     <input type="text" id="planLocation" placeholder="* LOCATION OF YOUR PLOT" required>
                     <textarea id="planMessage" rows="4" placeholder="YOUR MESSAGE (Optional)"></textarea>
-                    <button type="submit" class="btn-primary" style="width: 100%; border-radius: 5px;">Book Free Consultation</button>
+                    <button type="submit" class="btn-primary" style="width: 100%; border-radius: 6px; font-size: 16px;">Book Free Consultation ➔</button>
                 </form>
             </div>
         </div>
@@ -411,10 +453,10 @@
         <p>&copy; 2026 Grihani Homes. All Rights Reserved.</p>
     </footer>
 
-    <!-- Button Text Changed to 'Chat Now' -->
+    <!-- Chat Now Float Button -->
     <a href="#" class="whatsapp-float" target="_blank" id="wa-float">💬 Chat Now</a>
 
-    <!-- Attractive Floating Contact Bar - Only shows when scrolled -->
+    <!-- Floating Contact Bar -->
     <div class="floating-contact-bar" id="floatingBar">
       <h3>Build Your Dream Home Today</h3>
       <form id="floatingContactForm">
@@ -425,7 +467,7 @@
     </div>
 
     <script>
-        const WHATSAPP_NUMBER = "919876543210"; 
+        const WHATSAPP_NUMBER = "918987263648"; 
         const BRAND_NAME = "GRIHANI HOMES";
         const LOGO_URL = "logo.png"; 
 
@@ -441,7 +483,6 @@
             { url: "https://res.cloudinary.com/eemp4pxt/video/upload/v1788082568/video3.mp4", caption: "Quality Inspection" }
         ];
 
-        // 6 Real Construction Site Photos added
         const GALLERY_IMAGES = [
             "https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&w=600",
             "https://images.pexels.com/photos/2244746/pexels-photo-2244746.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -451,7 +492,6 @@
             "https://images.pexels.com/photos/1463917/pexels-photo-1463917.jpeg?auto=compress&cs=tinysrgb&w=600"
         ];
 
-        // Real Cement & Steel Brand Logos
         const BRANDS_LOGOS = [
             "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Ambuja_Cement_Logo.svg/512px-Ambuja_Cement_Logo.svg.png",
             "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Tata_Logo.svg/512px-Tata_Logo.svg.png",
@@ -465,10 +505,10 @@
         document.getElementById('heroLogoText').textContent = BRAND_NAME;
         document.getElementById('wa-float').href = `https://wa.me/${WHATSAPP_NUMBER}`;
 
-        // Hide Floating Bar on Top, Show on Scroll
+        // Scroll Logic for Floating Contact Bar
         const floatingBar = document.getElementById('floatingBar');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 400) {
+            if (window.scrollY > 450) {
                 floatingBar.classList.add('show');
             } else {
                 floatingBar.classList.remove('show');
@@ -521,31 +561,38 @@
             projectSelect.appendChild(option);
         });
 
+        // Top Form WhatsApp Handler
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             var name = document.getElementById('userName').value;
             var phone = document.getElementById('userPhone').value;
             var project = document.getElementById('projectType').value;
             var city = document.getElementById('userCity').value;
-            var message = `*New Lead from Website*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Project:* ${project}%0A*City:* ${city}%0A%0APlease contact me.`;
+            var message = `*New Lead from Grihani Homes*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Project:* ${encodeURIComponent(project)}%0A*City:* ${encodeURIComponent(city)}`;
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
         });
 
+        // Floating Form WhatsApp Handler
         document.getElementById('floatingContactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             var name = document.getElementById('floatName').value;
             var phone = document.getElementById('floatPhone').value;
-            alert("Thank you " + name + ". We will contact you soon on " + phone);
+            var message = `*Callback Request - Grihani Homes*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}`;
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
             this.reset();
         });
 
+        // 'Plan Your Project' Form Directly Sends to WhatsApp
         document.getElementById('planYourProjectForm').addEventListener('submit', function(e) {
             e.preventDefault();
             var name = document.getElementById('planName').value;
             var phone = document.getElementById('planPhone').value;
             var location = document.getElementById('planLocation').value;
-            var msg = document.getElementById('planMessage').value;
-            alert("Thanks " + name + "! Your project details for location: " + location + " are submitted.");
+            var msg = document.getElementById('planMessage').value || "No specific message provided";
+            
+            var whatsappText = `*New Consultation Request - Grihani Homes*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Plot Location:* ${encodeURIComponent(location)}%0A*Message:* ${encodeURIComponent(msg)}`;
+            
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappText}`, '_blank');
             this.reset();
         });
 
