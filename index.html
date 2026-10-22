@@ -136,8 +136,9 @@
         .whatsapp-float { position: fixed; width: 160px; height: 50px; bottom: 30px; right: 30px; background-color: var(--whatsapp-green); color: #fff; border-radius: 25px; display: flex; align-items: center; justify-content: center; font-weight: bold; text-decoration: none; z-index: 1000; box-shadow: 2px 2px 15px rgba(0,0,0,0.3); transition: 0.3s; }
         .whatsapp-float:hover { transform: scale(1.05); }
 
-        /* Floating Contact Bar */
-        .floating-contact-bar { position: fixed; bottom: 0; left: 0; width: 100%; background-color: var(--navy-blue); color: #fff; padding: 15px 20px; z-index: 1000; box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2); display: flex; justify-content: center; align-items: center; gap: 20px; }
+        /* Floating Contact Bar - Hidden by default and transitions only on opacity/visibility */
+        .floating-contact-bar { position: fixed; bottom: 0; left: 0; width: 100%; background-color: var(--navy-blue); color: #fff; padding: 15px 20px; z-index: 1000; box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2); display: flex; justify-content: center; align-items: center; gap: 20px; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+        .floating-contact-bar.show { opacity: 1; visibility: visible; }
         .floating-contact-bar h3 { margin: 0; font-size: 18px; color: #D4AF37; }
         .floating-contact-bar form { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
         .floating-contact-bar input { padding: 10px; border-radius: 5px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); color: #fff; width: 200px; }
@@ -158,7 +159,6 @@
             .floating-contact-bar { flex-direction: column; gap: 10px; }
             .floating-contact-bar form { flex-direction: column; width: 100%; }
             .floating-contact-bar input { width: 100%; }
-            .pricing-section { padding-bottom: 100px; } /* Space for floating bar */
         }
     </style>
 </head>
@@ -249,7 +249,6 @@
         </div>
     </section>
 
-    <!-- Pricing / Construction Cost Section -->
     <section class="pricing-section">
       <div class="container">
         <div class="section-header">
@@ -319,7 +318,7 @@
           <!-- Premium Finishing -->
           <div class="pricing-card">
             <div class="card-img">
-              <img src="https://images.pexels.com/photos/2062423/pexels-photo-2062423.jpeg" alt="Premium Finishing">
+              <img src="https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&d=2" alt="Premium Finishing">
             </div>
             <div class="card-content">
               <h3>Premium Finishing</h3>
@@ -387,7 +386,7 @@
     <a href="#" class="whatsapp-float" target="_blank" id="wa-float">💬 WhatsApp Now</a>
 
     <!-- Floating Contact Bar -->
-    <div class="floating-contact-bar">
+    <div class="floating-contact-bar" id="floatingBar">
       <h3>Build Your Dream Home Today</h3>
       <form id="floatingContactForm">
         <input type="text" id="floatName" placeholder="Your Name" required>
@@ -397,10 +396,6 @@
     </div>
 
     <script>
-        // ==========================================
-        // MEDIA CONTROL PANEL (यहाँ डायनेमिक लिंक्स पेस्ट करें)
-        // ==========================================
-
         const WHATSAPP_NUMBER = "919876543210"; 
         const BRAND_NAME = "GRIHANI HOMES";
         const LOGO_URL = "logo.png"; 
@@ -429,16 +424,22 @@
             "https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&cs=tinysrgb&w=200"
         ];
 
-        // ==========================================
-        // AUTO-GENERATION LOGIC (इसे न बदलें)
-        // ==========================================
-
         document.getElementById('dynamicLogoImg').src = LOGO_URL;
         document.getElementById('dynamicLogoText').textContent = BRAND_NAME;
         document.getElementById('heroLogoImg').src = LOGO_URL;
         document.getElementById('heroLogoText').textContent = BRAND_NAME;
 
         document.getElementById('wa-float').href = `https://wa.me/${WHATSAPP_NUMBER}`;
+
+        // Scroll Logic for Floating Contact Bar
+        const floatingBar = document.getElementById('floatingBar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                floatingBar.classList.add('show');
+            } else {
+                floatingBar.classList.remove('show');
+            }
+        });
 
         const themeBtn = document.getElementById('theme-toggle');
         themeBtn.addEventListener('click', () => {
@@ -496,13 +497,11 @@
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
         });
 
-        // Floating Contact Form Handler
         document.getElementById('floatingContactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             var name = document.getElementById('floatName').value;
             var phone = document.getElementById('floatPhone').value;
             alert("Thank you " + name + ". We will contact you soon on " + phone);
-            // You can integrate this with a real backend or WhatsApp API as needed
             this.reset();
         });
 
