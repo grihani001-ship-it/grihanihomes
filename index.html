@@ -14,6 +14,7 @@
             --terracotta: #D35400;
             --whatsapp-green: #25D366;
             --border-color: rgba(212, 175, 55, 0.4);
+            --gold: #D4AF37;
         }
 
         body.dark-mode {
@@ -28,7 +29,7 @@
         body { background-color: var(--bg-color); color: var(--text-color); transition: background 0.3s, color 0.3s; scroll-behavior: smooth; }
 
         header {
-            background: #080E1A; border-bottom: 2px solid #D4AF37; color: #fff; padding: 12px 40px;
+            background: #080E1A; border-bottom: 2px solid var(--gold); color: #fff; padding: 12px 40px;
             display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.8);
         }
 
@@ -38,24 +39,24 @@
         .brand-name { font-size: 22px; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; background: linear-gradient(to bottom, #FFE599 0%, #D4AF37 50%, #996515 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.9)); }
 
         .header-social-icons { display: flex; gap: 8px; align-items: center; }
-        .header-social-icons a { color: #D4AF37; font-size: 13px; text-decoration: none; width: 24px; height: 24px; border-radius: 50%; background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.3); display: flex; align-items: center; justify-content: center; transition: 0.3s; }
-        .header-social-icons a:hover { background: #D4AF37; color: #080E1A; transform: translateY(-2px); }
+        .header-social-icons a { color: var(--gold); font-size: 13px; text-decoration: none; width: 24px; height: 24px; border-radius: 50%; background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.3); display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+        .header-social-icons a:hover { background: var(--gold); color: #080E1A; transform: translateY(-2px); }
 
         nav { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
         nav > a { color: #f1f1f1; text-decoration: none; font-size: 14px; font-weight: 500; transition: 0.3s; }
-        nav > a:hover { color: #D4AF37; }
+        nav > a:hover { color: var(--gold); }
 
         .dropdown { position: relative; display: inline-block; }
         .dropdown > a { color: #f1f1f1; text-decoration: none; font-size: 14px; font-weight: 500; transition: 0.3s; }
-        .dropdown > a:hover { color: #D4AF37; }
-        .dropdown-content { display: none; position: absolute; background-color: #080E1A; min-width: 210px; box-shadow: 0px 8px 16px rgba(0,0,0,0.5); z-index: 1001; border-top: 2px solid #D4AF37; top: 100%; left: 0; }
+        .dropdown > a:hover { color: var(--gold); }
+        .dropdown-content { display: none; position: absolute; background-color: #080E1A; min-width: 210px; box-shadow: 0px 8px 16px rgba(0,0,0,0.5); z-index: 1001; border-top: 2px solid var(--gold); top: 100%; left: 0; }
         .dropdown-content a { color: white; padding: 10px 14px; text-decoration: none; display: block; font-size: 13px; }
-        .dropdown-content a:hover { background-color: #1A2B4C; color: #D4AF37; }
+        .dropdown-content a:hover { background-color: #1A2B4C; color: var(--gold); }
         .dropdown:hover .dropdown-content { display: block; }
 
         .nav-buttons { display: flex; gap: 8px; align-items: center; }
-        .action-btn { background: rgba(212, 175, 55, 0.1); border: 1px solid #D4AF37; color: #D4AF37; padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 13px; font-weight: bold; transition: 0.3s; }
-        .action-btn:hover { background: #D4AF37; color: #000; }
+        .action-btn { background: rgba(212, 175, 55, 0.1); border: 1px solid var(--gold); color: var(--gold); padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 13px; font-weight: bold; transition: 0.3s; }
+        .action-btn:hover { background: var(--gold); color: #000; }
 
         .hero { position: relative; padding: 60px 5% 80px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; overflow: hidden; background-color: #000; }
         .hero-video { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: 0; transform: translateX(-50%) translateY(-50%); object-fit: cover; opacity: 0.6; }
@@ -71,14 +72,14 @@
         .btn-primary { background-color: var(--terracotta); color: #fff; padding: 12px 25px; border-radius: 5px; font-size: 16px; font-weight: bold; cursor: pointer; text-decoration: none; border: none; box-shadow: 0 4px 15px rgba(211, 84, 0, 0.4); }
         
         .lead-form { background-color: var(--card-bg); color: #fff; backdrop-filter: blur(12px); border: 1.5px solid rgba(212, 175, 55, 0.4); padding: 30px; border-radius: 12px; width: 100%; max-width: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.7); }
-        .lead-form h3 { margin-bottom: 15px; color: #D4AF37; font-size: 22px; text-align: center; }
+        .lead-form h3 { margin-bottom: 15px; color: var(--gold); font-size: 22px; text-align: center; }
         .lead-form input, .lead-form select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background-color: rgba(255, 255, 255, 0.08); color: #fff; font-size: 15px; }
         .lead-form select option { background: #1A2B4C; color: #fff; }
         .btn-submit { width: 100%; background: linear-gradient(135deg, #D35400, #E67E22); color: #fff; padding: 12px; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.5); transition: 0.3s; }
         .btn-submit:hover { opacity: 0.9; }
 
-        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0, 0, 0, 0.6); color: #D4AF37; border: 2px solid #D4AF37; border-radius: 50%; width: 50px; height: 50px; font-size: 20px; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
-        .slider-btn:hover { background: #D4AF37; color: #000; }
+        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0, 0, 0, 0.6); color: var(--gold); border: 2px solid var(--gold); border-radius: 50%; width: 50px; height: 50px; font-size: 20px; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+        .slider-btn:hover { background: var(--gold); color: #000; }
         .slider-btn.prev { left: 20px; }
         .slider-btn.next { right: 20px; }
 
@@ -90,7 +91,7 @@
         .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px;}
         .pricing-card { background: #fff; border: 1px solid #ddd; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); display: flex; flex-direction: column; transition: transform 0.3s ease; }
         .pricing-card:hover { transform: translateY(-5px); }
-        .pricing-card.featured { border: 2px solid #D4AF37; }
+        .pricing-card.featured { border: 2px solid var(--gold); }
         .card-img img { width: 100%; height: 200px; object-fit: cover; }
         .card-content { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; }
         .card-content h3 { font-size: 22px; color: var(--navy-blue); margin-bottom: 10px; }
@@ -107,13 +108,13 @@
         .reels-section { padding: 60px 0; background-color: var(--bg-color); text-align: center; overflow: hidden; }
         .marquee-wrapper { display: flex; width: 100%; overflow: hidden; white-space: nowrap; position: relative; margin-top: 25px; }
         .marquee-track { display: flex; gap: 30px; align-items: center; animation: scrollMarquee 25s linear infinite; }
-        .reel-card { min-width: 260px; height: 420px; background: var(--card-bg); border-radius: 12px; border: 2px solid #D4AF37; padding: 12px; display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+        .reel-card { min-width: 260px; height: 420px; background: var(--card-bg); border-radius: 12px; border: 2px solid var(--gold); padding: 12px; display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
         .reel-card video { width: 100%; height: 350px; object-fit: cover; border-radius: 8px; }
         .reel-card p { margin-top: 8px; font-size: 13px; font-weight: bold; color: #f1f1f1; white-space: normal; }
 
         .service-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; padding: 0 5% 60px; }
-        .service-card { background-color: var(--card-bg); color: #fff; padding: 30px; border-radius: 8px; width: 100%; max-width: 280px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-bottom: 4px solid #D4AF37; }
-        .service-card h4 { margin-bottom: 15px; color: #D4AF37; font-size: 20px; }
+        .service-card { background-color: var(--card-bg); color: #fff; padding: 30px; border-radius: 8px; width: 100%; max-width: 280px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-bottom: 4px solid var(--gold); }
+        .service-card h4 { margin-bottom: 15px; color: var(--gold); font-size: 20px; }
         .service-card p { font-size: 15px; line-height: 1.6; color: #ddd; }
 
         .gallery-grid { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; padding: 0 5% 60px; }
@@ -121,10 +122,16 @@
         .gallery-grid img:hover { transform: scale(1.05); }
 
         .trust-brands-section { padding: 50px 0; background: transparent; text-align: center; overflow: hidden; }
-        .trust-brands-section h2 { font-size: 36px; font-weight: 900; color: #D4AF37; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .trust-brands-section h2 { font-size: 36px; font-weight: 900; color: var(--gold); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
         .trust-brands-section p { font-size: 16px; max-width: 700px; margin: 0 auto 30px; color: var(--text-color); opacity: 0.9; }
         .brand-logo-item { min-width: 160px; height: 70px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: #fff; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         .brand-logo-item img { max-height: 50px; max-width: 140px; object-fit: contain; background: transparent; mix-blend-mode: multiply; }
+
+        /* Plan Your Project Section */
+        .plan-project-section { padding: 60px 20px; background-color: #f4f6f9; }
+        .plan-form-container { max-width: 600px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-top: 4px solid var(--terracotta); }
+        .plan-form-container input, .plan-form-container textarea { width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 5px; font-size: 15px; background-color: #fafafa; }
+        .plan-form-container input:focus, .plan-form-container textarea:focus { border-color: var(--terracotta); outline: none; background-color: #fff; }
 
         @keyframes scrollMarquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
@@ -132,28 +139,29 @@
         #lightbox img { max-width: 90%; max-height: 90%; border-radius: 8px; }
         #lightbox-close { position: absolute; top: 20px; right: 40px; color: white; font-size: 40px; cursor: pointer; }
 
-        footer { background: linear-gradient(135deg, #050b14 0%, #101c30 100%); color: #fff; text-align: center; padding: 20px; padding-bottom: 80px; border-top: 2px solid #D4AF37; }
+        footer { background: linear-gradient(135deg, #050b14 0%, #101c30 100%); color: #fff; text-align: center; padding: 20px; padding-bottom: 100px; border-top: 2px solid var(--gold); }
         
-        /* WhatsApp Button - Moved UP to avoid overlap with Floating Bar */
-        .whatsapp-float { position: fixed; width: 160px; height: 50px; bottom: 90px; right: 30px; background-color: var(--whatsapp-green); color: #fff; border-radius: 25px; display: flex; align-items: center; justify-content: center; font-weight: bold; text-decoration: none; z-index: 1001; box-shadow: 2px 2px 15px rgba(0,0,0,0.3); transition: 0.3s; }
+        /* WhatsApp Button - Moved UP & Renamed to Chat Now */
+        .whatsapp-float { position: fixed; width: 160px; height: 50px; bottom: 100px; right: 30px; background-color: var(--whatsapp-green); color: #fff; border-radius: 25px; display: flex; align-items: center; justify-content: center; font-weight: bold; text-decoration: none; z-index: 1001; box-shadow: 2px 2px 15px rgba(0,0,0,0.3); transition: 0.3s; }
         .whatsapp-float:hover { transform: scale(1.05); }
 
-        /* Floating Contact Bar - Hidden by default */
-        .floating-contact-bar { position: fixed; bottom: 0; left: 0; width: 100%; background-color: var(--navy-blue); color: #fff; padding: 15px 20px; z-index: 1000; box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2); display: flex; justify-content: center; align-items: center; gap: 20px; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
-        .floating-contact-bar.show { opacity: 1; visibility: visible; }
-        .floating-contact-bar h3 { margin: 0; font-size: 18px; color: #D4AF37; }
-        .floating-contact-bar form { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-        .floating-contact-bar input { padding: 10px; border-radius: 5px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); color: #fff; width: 200px; }
-        .floating-contact-bar button { background-color: var(--terracotta); color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; }
-        .floating-contact-bar button:hover { opacity: 0.9; }
+        /* Attractive Floating Contact Bar */
+        .floating-contact-bar { position: fixed; bottom: -100px; left: 0; width: 100%; background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); border-top: 3px solid var(--gold); color: #fff; padding: 15px 20px; z-index: 1000; box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: center; gap: 30px; transition: bottom 0.4s ease-in-out; }
+        .floating-contact-bar.show { bottom: 0; }
+        .floating-contact-bar h3 { margin: 0; font-size: 18px; color: var(--gold); text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+        .floating-contact-bar form { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+        .floating-contact-bar input { padding: 12px; border-radius: 5px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.1); color: #fff; width: 220px; font-size: 14px; }
+        .floating-contact-bar input::placeholder { color: #ccc; }
+        .floating-contact-bar button { background: linear-gradient(135deg, #D35400, #E67E22); color: #fff; padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; box-shadow: 0 4px 10px rgba(211, 84, 0, 0.4); }
+        .floating-contact-bar button:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(211, 84, 0, 0.6); }
 
         @media (max-width: 768px) {
             .hero-content { flex-direction: column; text-align: center; }
             .hero-text { padding-right: 0; margin-bottom: 30px; }
             header { flex-direction: column; gap: 15px; padding: 12px 20px; }
             
-            /* WhatsApp Button specific for Mobile so it floats above the stacked form */
-            .whatsapp-float { width: 50px; height: 50px; border-radius: 50%; font-size: 0; bottom: 200px; right: 20px; }
+            /* Mobile Chat Now Button */
+            .whatsapp-float { width: 50px; height: 50px; border-radius: 50%; font-size: 0; bottom: 180px; right: 20px; }
             .whatsapp-float::after { content: "💬"; font-size: 24px; }
             
             .slider-btn { width: 35px; height: 35px; font-size: 14px; }
@@ -162,8 +170,7 @@
             .hero-center-logo img { height: 75px; }
             .hero-center-logo h1 { font-size: 24px; }
             
-            /* Floating Bar Adjustments for Mobile */
-            .floating-contact-bar { flex-direction: column; gap: 10px; }
+            .floating-contact-bar { flex-direction: column; gap: 15px; text-align: center; }
             .floating-contact-bar form { flex-direction: column; width: 100%; }
             .floating-contact-bar input, .floating-contact-bar button { width: 100%; }
         }
@@ -264,7 +271,6 @@
         </div>
 
         <div class="pricing-grid">
-          <!-- Basic Structure -->
           <div class="pricing-card">
             <div class="card-img">
               <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg" alt="Basic Structure">
@@ -283,7 +289,6 @@
             </div>
           </div>
 
-          <!-- Basic Finishing -->
           <div class="pricing-card">
             <div class="card-img">
               <img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg" alt="Basic Finishing">
@@ -302,7 +307,6 @@
             </div>
           </div>
 
-          <!-- Advance Finishing -->
           <div class="pricing-card featured">
             <div class="card-img">
               <img src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg" alt="Advance Finishing">
@@ -322,9 +326,8 @@
             </div>
           </div>
 
-          <!-- Premium Finishing -->
+          <!-- Premium Finishing Image Fixed -->
           <div class="pricing-card">
-            <!-- Premium Image Fix -->
             <div class="card-img">
               <img src="https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&d=2" alt="Premium Finishing">
             </div>
@@ -387,13 +390,31 @@
         <div class="marquee-wrapper"><div class="marquee-track" id="brandsTrack"></div></div>
     </section>
 
+    <!-- NEW: Plan Your Project Section -->
+    <section class="plan-project-section" id="plan-project">
+        <div class="container">
+            <h2 class="section-title" style="padding-top:0;">Plan Your Project</h2>
+            <p style="text-align:center; color: #666; margin-bottom: 40px;">Start with an initial quality assessment & execution idea.</p>
+            <div class="plan-form-container">
+                <form id="planYourProjectForm">
+                    <input type="text" id="planName" placeholder="* FULL NAME" required>
+                    <input type="tel" id="planPhone" placeholder="* PHONE NUMBER" required>
+                    <input type="text" id="planLocation" placeholder="* LOCATION OF YOUR PLOT" required>
+                    <textarea id="planMessage" rows="4" placeholder="YOUR MESSAGE (Optional)"></textarea>
+                    <button type="submit" class="btn-primary" style="width: 100%; border-radius: 5px;">Book Free Consultation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <p>&copy; 2026 Grihani Homes. All Rights Reserved.</p>
     </footer>
 
-    <a href="#" class="whatsapp-float" target="_blank" id="wa-float">💬 WhatsApp Now</a>
+    <!-- Button Text Changed to 'Chat Now' -->
+    <a href="#" class="whatsapp-float" target="_blank" id="wa-float">💬 Chat Now</a>
 
-    <!-- Floating Contact Bar -->
+    <!-- Attractive Floating Contact Bar - Only shows when scrolled -->
     <div class="floating-contact-bar" id="floatingBar">
       <h3>Build Your Dream Home Today</h3>
       <form id="floatingContactForm">
@@ -420,7 +441,7 @@
             { url: "https://res.cloudinary.com/eemp4pxt/video/upload/v1788082568/video3.mp4", caption: "Quality Inspection" }
         ];
 
-        // Updated with 6 realistic construction site photos
+        // 6 Real Construction Site Photos added
         const GALLERY_IMAGES = [
             "https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&w=600",
             "https://images.pexels.com/photos/2244746/pexels-photo-2244746.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -430,7 +451,7 @@
             "https://images.pexels.com/photos/1463917/pexels-photo-1463917.jpeg?auto=compress&cs=tinysrgb&w=600"
         ];
 
-        // Updated with real construction brand logos (Tata, Ambuja, Ultratech, Jindal)
+        // Real Cement & Steel Brand Logos
         const BRANDS_LOGOS = [
             "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Ambuja_Cement_Logo.svg/512px-Ambuja_Cement_Logo.svg.png",
             "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Tata_Logo.svg/512px-Tata_Logo.svg.png",
@@ -442,13 +463,12 @@
         document.getElementById('dynamicLogoText').textContent = BRAND_NAME;
         document.getElementById('heroLogoImg').src = LOGO_URL;
         document.getElementById('heroLogoText').textContent = BRAND_NAME;
-
         document.getElementById('wa-float').href = `https://wa.me/${WHATSAPP_NUMBER}`;
 
-        // Scroll Logic for Floating Contact Bar - Only shows when scrolled down
+        // Hide Floating Bar on Top, Show on Scroll
         const floatingBar = document.getElementById('floatingBar');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 500) {
+            if (window.scrollY > 400) {
                 floatingBar.classList.add('show');
             } else {
                 floatingBar.classList.remove('show');
@@ -479,7 +499,7 @@
         GALLERY_IMAGES.forEach(function(imageUrl) {
             let img = document.createElement('img');
             img.src = imageUrl;
-            img.alt = "Project Image";
+            img.alt = "Construction Site";
             img.onclick = function() { openLightbox(imageUrl); };
             galleryContainer.appendChild(img);
         });
@@ -516,6 +536,16 @@
             var name = document.getElementById('floatName').value;
             var phone = document.getElementById('floatPhone').value;
             alert("Thank you " + name + ". We will contact you soon on " + phone);
+            this.reset();
+        });
+
+        document.getElementById('planYourProjectForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('planName').value;
+            var phone = document.getElementById('planPhone').value;
+            var location = document.getElementById('planLocation').value;
+            var msg = document.getElementById('planMessage').value;
+            alert("Thanks " + name + "! Your project details for location: " + location + " are submitted.");
             this.reset();
         });
 
