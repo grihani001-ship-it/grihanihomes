@@ -123,8 +123,8 @@
         .trust-brands-section { padding: 50px 0; background: transparent; text-align: center; overflow: hidden; }
         .trust-brands-section h2 { font-size: 36px; font-weight: 900; color: #D4AF37; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
         .trust-brands-section p { font-size: 16px; max-width: 700px; margin: 0 auto 30px; color: var(--text-color); opacity: 0.9; }
-        .brand-logo-item { min-width: 160px; height: 70px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .brand-logo-item img { max-height: 60px; max-width: 150px; object-fit: contain; background: transparent; mix-blend-mode: multiply; filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1)); }
+        .brand-logo-item { min-width: 160px; height: 70px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: #fff; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .brand-logo-item img { max-height: 50px; max-width: 140px; object-fit: contain; background: transparent; mix-blend-mode: multiply; }
 
         @keyframes scrollMarquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
@@ -132,11 +132,13 @@
         #lightbox img { max-width: 90%; max-height: 90%; border-radius: 8px; }
         #lightbox-close { position: absolute; top: 20px; right: 40px; color: white; font-size: 40px; cursor: pointer; }
 
-        footer { background: linear-gradient(135deg, #050b14 0%, #101c30 100%); color: #fff; text-align: center; padding: 20px; border-top: 2px solid #D4AF37; }
-        .whatsapp-float { position: fixed; width: 160px; height: 50px; bottom: 30px; right: 30px; background-color: var(--whatsapp-green); color: #fff; border-radius: 25px; display: flex; align-items: center; justify-content: center; font-weight: bold; text-decoration: none; z-index: 1000; box-shadow: 2px 2px 15px rgba(0,0,0,0.3); transition: 0.3s; }
+        footer { background: linear-gradient(135deg, #050b14 0%, #101c30 100%); color: #fff; text-align: center; padding: 20px; padding-bottom: 80px; border-top: 2px solid #D4AF37; }
+        
+        /* WhatsApp Button - Moved UP to avoid overlap with Floating Bar */
+        .whatsapp-float { position: fixed; width: 160px; height: 50px; bottom: 90px; right: 30px; background-color: var(--whatsapp-green); color: #fff; border-radius: 25px; display: flex; align-items: center; justify-content: center; font-weight: bold; text-decoration: none; z-index: 1001; box-shadow: 2px 2px 15px rgba(0,0,0,0.3); transition: 0.3s; }
         .whatsapp-float:hover { transform: scale(1.05); }
 
-        /* Floating Contact Bar - Hidden by default and transitions only on opacity/visibility */
+        /* Floating Contact Bar - Hidden by default */
         .floating-contact-bar { position: fixed; bottom: 0; left: 0; width: 100%; background-color: var(--navy-blue); color: #fff; padding: 15px 20px; z-index: 1000; box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2); display: flex; justify-content: center; align-items: center; gap: 20px; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
         .floating-contact-bar.show { opacity: 1; visibility: visible; }
         .floating-contact-bar h3 { margin: 0; font-size: 18px; color: #D4AF37; }
@@ -149,16 +151,21 @@
             .hero-content { flex-direction: column; text-align: center; }
             .hero-text { padding-right: 0; margin-bottom: 30px; }
             header { flex-direction: column; gap: 15px; padding: 12px 20px; }
-            .whatsapp-float { width: 50px; height: 50px; border-radius: 50%; font-size: 0; }
+            
+            /* WhatsApp Button specific for Mobile so it floats above the stacked form */
+            .whatsapp-float { width: 50px; height: 50px; border-radius: 50%; font-size: 0; bottom: 200px; right: 20px; }
             .whatsapp-float::after { content: "💬"; font-size: 24px; }
+            
             .slider-btn { width: 35px; height: 35px; font-size: 14px; }
             .slider-btn.prev { left: 5px; }
             .slider-btn.next { right: 5px; }
             .hero-center-logo img { height: 75px; }
             .hero-center-logo h1 { font-size: 24px; }
+            
+            /* Floating Bar Adjustments for Mobile */
             .floating-contact-bar { flex-direction: column; gap: 10px; }
             .floating-contact-bar form { flex-direction: column; width: 100%; }
-            .floating-contact-bar input { width: 100%; }
+            .floating-contact-bar input, .floating-contact-bar button { width: 100%; }
         }
     </style>
 </head>
@@ -317,6 +324,7 @@
 
           <!-- Premium Finishing -->
           <div class="pricing-card">
+            <!-- Premium Image Fix -->
             <div class="card-img">
               <img src="https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&d=2" alt="Premium Finishing">
             </div>
@@ -412,16 +420,22 @@
             { url: "https://res.cloudinary.com/eemp4pxt/video/upload/v1788082568/video3.mp4", caption: "Quality Inspection" }
         ];
 
+        // Updated with 6 realistic construction site photos
         const GALLERY_IMAGES = [
-            "https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "https://images.pexels.com/photos/2244746/pexels-photo-2244746.jpeg?auto=compress&cs=tinysrgb&w=600",
             "https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=600",
-            "https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=600"
+            "https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "https://images.pexels.com/photos/1463917/pexels-photo-1463917.jpeg?auto=compress&cs=tinysrgb&w=600"
         ];
 
+        // Updated with real construction brand logos (Tata, Ambuja, Ultratech, Jindal)
         const BRANDS_LOGOS = [
-            "https://images.pexels.com/photos/276514/pexels-photo-276514.jpeg?auto=compress&cs=tinysrgb&w=200",
-            "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=200",
-            "https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&cs=tinysrgb&w=200"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Ambuja_Cement_Logo.svg/512px-Ambuja_Cement_Logo.svg.png",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Tata_Logo.svg/512px-Tata_Logo.svg.png",
+            "https://upload.wikimedia.org/wikipedia/en/thumb/e/e0/Ultratech_Cement_Logo.svg/512px-Ultratech_Cement_Logo.svg.png",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Jindal_Steel_and_Power_Logo.svg/512px-Jindal_Steel_and_Power_Logo.svg.png"
         ];
 
         document.getElementById('dynamicLogoImg').src = LOGO_URL;
@@ -431,7 +445,7 @@
 
         document.getElementById('wa-float').href = `https://wa.me/${WHATSAPP_NUMBER}`;
 
-        // Scroll Logic for Floating Contact Bar
+        // Scroll Logic for Floating Contact Bar - Only shows when scrolled down
         const floatingBar = document.getElementById('floatingBar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 500) {
