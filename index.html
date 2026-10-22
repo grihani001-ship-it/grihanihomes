@@ -92,6 +92,34 @@
         .concept-card-content h3 { color: #D4AF37; font-size: 22px; margin-bottom: 10px; }
         .concept-card-content p { font-size: 14px; line-height: 1.5; color: #f1f1f1; opacity: 0.85; }
 
+        /* =========== NEW PRICING SECTION CSS =========== */
+        .pricing-section { padding: 60px 5%; background-color: var(--bg-color); }
+        .pricing-header { text-align: center; margin-bottom: 40px; }
+        .pricing-header h2 { font-size: 32px; color: var(--terracotta); margin-bottom: 10px; }
+        .pricing-header p { font-size: 16px; color: var(--text-color); max-width: 800px; margin: 0 auto; opacity: 0.9; }
+        
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; justify-content: center; }
+        .pricing-card { background-color: var(--card-bg); border-radius: 15px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.1); display: flex; flex-direction: column; transition: 0.3s; border: 1px solid var(--border-color); position: relative; }
+        .pricing-card:hover { transform: translateY(-5px); }
+        .pricing-card.featured { border: 2px solid #D4AF37; transform: scale(1.03); z-index: 1; }
+        .pricing-card.featured:hover { transform: scale(1.03) translateY(-5px); }
+        .pricing-card.featured::before { content: 'Best Value'; position: absolute; top: 15px; right: -35px; background: #D4AF37; color: #000; padding: 5px 40px; transform: rotate(45deg); font-weight: bold; font-size: 12px; z-index: 2; box-shadow: 0 2px 5px rgba(0,0,0,0.3);}
+        
+        .pricing-card .card-img img { width: 100%; height: 180px; object-fit: cover; border-bottom: 2px solid var(--border-color); }
+        .pricing-card .card-content { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; }
+        .pricing-card h3 { font-size: 22px; color: #D4AF37; margin-bottom: 10px; }
+        .pricing-card .price { font-size: 24px; font-weight: bold; color: var(--terracotta); margin-bottom: 15px; }
+        .pricing-card .price .unit { font-size: 14px; color: var(--text-color); font-weight: normal; opacity: 0.8; }
+        .pricing-card p { font-size: 14px; line-height: 1.5; color: #f1f1f1; margin-bottom: 20px; opacity: 0.85; }
+        
+        .pricing-features { list-style: none; padding: 0; margin-bottom: 25px; flex-grow: 1; }
+        .pricing-features li { font-size: 14px; color: #f1f1f1; margin-bottom: 12px; padding-left: 25px; position: relative; opacity: 0.9; }
+        .pricing-features li::before { content: "✓"; color: #25D366; font-weight: bold; position: absolute; left: 0; font-size: 16px; }
+        
+        .btn-pricing { background: linear-gradient(135deg, #D35400, #E67E22); color: #fff; padding: 12px; border: none; border-radius: 6px; font-size: 15px; font-weight: bold; cursor: pointer; transition: 0.3s; text-align: center; text-decoration: none; width: 100%; margin-top: auto; }
+        .btn-pricing:hover { opacity: 0.9; box-shadow: 0 4px 15px rgba(211, 84, 0, 0.4); color: #fff;}
+        /* =============================================== */
+
         .reels-section { padding: 60px 0; background-color: var(--bg-color); text-align: center; overflow: hidden; }
         .marquee-wrapper { display: flex; width: 100%; overflow: hidden; white-space: nowrap; position: relative; margin-top: 25px; }
         .marquee-track { display: flex; gap: 30px; align-items: center; animation: scrollMarquee 25s linear infinite; }
@@ -136,6 +164,10 @@
             .slider-btn.next { right: 5px; }
             .hero-center-logo img { height: 75px; }
             .hero-center-logo h1 { font-size: 24px; }
+            
+            /* Pricing Mobile Adjustments */
+            .pricing-card.featured { transform: scale(1); margin-top: 15px; margin-bottom: 15px; }
+            .pricing-card.featured:hover { transform: translateY(-5px); }
         }
     </style>
 </head>
@@ -193,6 +225,7 @@
                 </div>
             </div>
 
+            <a href="#pricing">Pricing</a> <!-- नया Pricing बटन जोड़ा गया -->
             <a href="#services">Services</a>
             <a href="#gallery">Gallery</a>
             <a href="#contact">Contact Us</a>
@@ -264,6 +297,98 @@
         </div>
     </section>
 
+    <!-- ============================================== -->
+    <!-- NEW PRICING SECTION (Home Construction Cost)   -->
+    <!-- ============================================== -->
+    <section class="pricing-section" id="pricing">
+        <div class="pricing-header">
+            <h2>Home Construction Cost Per Sqft</h2>
+            <p>Average residential construction costs in Bihar can start from ₹1,250 to ₹4,000 per sqft depending on the quality of finishes.</p>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- Basic Structure -->
+            <div class="pricing-card">
+                <div class="card-img">
+                    <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Basic Structure">
+                </div>
+                <div class="card-content">
+                    <h3>Basic Structure</h3>
+                    <div class="price">₹1,250 - ₹1,400 <span class="unit">/ sqft</span></div>
+                    <p>A budget package with no compromise on quality that includes all construction essentials.</p>
+                    <ul class="pricing-features">
+                        <li>Trusted brand steel & cement</li>
+                        <li>Standard flush doors and window finish</li>
+                        <li>Tractor Emulsion finish</li>
+                        <li>Essential kitchen & bathroom fittings</li>
+                    </ul>
+                    <a href="#contact" class="btn-pricing">GET A QUOTE</a>
+                </div>
+            </div>
+
+            <!-- Basic Finishing -->
+            <div class="pricing-card">
+                <div class="card-img">
+                    <img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Basic Finishing">
+                </div>
+                <div class="card-content">
+                    <h3>Basic Finishing</h3>
+                    <div class="price">₹1,900 - ₹2,200 <span class="unit">/ sqft</span></div>
+                    <p>The Best Seller Package. Upgrade your home with trusted brands like Jindal Steel and Hardware at an affordable price.</p>
+                    <ul class="pricing-features">
+                        <li>Superior brand cement & steel</li>
+                        <li>Elegant teak doors and window finish</li>
+                        <li>Stylish kitchen & bathroom</li>
+                        <li>High-Grade Bricks</li>
+                    </ul>
+                    <a href="#contact" class="btn-pricing">GET A QUOTE</a>
+                </div>
+            </div>
+
+            <!-- Advance Finishing (Featured/Highlighted) -->
+            <div class="pricing-card featured">
+                <div class="card-img">
+                    <img src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Advance Finishing">
+                </div>
+                <div class="card-content">
+                    <h3>Advance Finishing</h3>
+                    <div class="price">₹2,500 - ₹3,000 <span class="unit">/ sqft</span></div>
+                    <p>Designed for Modern Living. An elegant package with luxury additions, including solar heating setups.</p>
+                    <ul class="pricing-features">
+                        <li>Superior Brand steel & cement</li>
+                        <li>Designer teak doors and window finish</li>
+                        <li>Best quality bathroom & kitchen</li>
+                        <li>Textured Designer Paint</li>
+                        <li>AAC Blocks / High-Grade Bricks</li>
+                    </ul>
+                    <a href="#contact" class="btn-pricing">GET A QUOTE</a>
+                </div>
+            </div>
+
+            <!-- Premium Finishing -->
+            <div class="pricing-card">
+                <div class="card-img">
+                    <img src="https://images.pexels.com/photos/2062423/pexels-photo-2062423.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Premium Finishing">
+                </div>
+                <div class="card-content">
+                    <h3>Premium Finishing</h3>
+                    <div class="price">₹3,200 - ₹4,000 <span class="unit">/ sqft</span></div>
+                    <p>Premium finishes meeting modern lifestyle features, from EV charging ports to secure connections.</p>
+                    <ul class="pricing-features">
+                        <li>Superior Brand steel & cement</li>
+                        <li>Designer teak doors and window finish</li>
+                        <li>Apex Ultima Exterior finish</li>
+                        <li>Lavish Fittings for kitchen & bathroom</li>
+                        <li>AAC Blocks / High-Grade Bricks</li>
+                        <li>Bespoke Designer Kitchen & Wardrobes</li>
+                    </ul>
+                    <a href="#contact" class="btn-pricing">GET A QUOTE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ============================================== -->
+
     <section class="reels-section" id="reels">
         <h2 class="section-title" style="padding-top: 0; margin-bottom: 10px;">Our Instagram Reels & Site Videos</h2>
         <p style="margin-bottom: 20px; color: var(--text-color);">Check out glimpses of our ongoing projects and quality work</p>
@@ -324,8 +449,8 @@
         // 1. हीरो वीडियो लिंक्स
         const HERO_VIDEOS = [
             "https://res.cloudinary.com/eemp4pxt/video/upload/v1788081772/video1.mp4",
-	    "https://res.cloudinary.com/eemp4pxt/video/upload/v1788082011/video2.mp4",
-	    "https://res.cloudinary.com/eemp4pxt/video/upload/v1788082568/video3.mp4"    
+        "https://res.cloudinary.com/eemp4pxt/video/upload/v1788082011/video2.mp4",
+        "https://res.cloudinary.com/eemp4pxt/video/upload/v1788082568/video3.mp4"   
     ];
 
         // 2. रील्स के वीडियो
@@ -456,3 +581,5 @@
         document.getElementById('nextBtn').addEventListener('click', () => changeVideo('next'));
         document.getElementById('prevBtn').addEventListener('click', () => changeVideo('prev'));
     </script>
+</body>
+</html>
