@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grihani Homes - Premium Construction</title>
-    <!-- FontAwesome Icons for Social Media -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -83,43 +82,28 @@
         .slider-btn.prev { left: 20px; }
         .slider-btn.next { right: 20px; }
 
-        .concept-section { padding: 40px 5%; background-color: var(--bg-color); }
-        .concept-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
-        .concept-card { background-color: var(--card-bg); border-radius: 15px; overflow: hidden; width: 320px; box-shadow: 0 6px 20px rgba(0,0,0,0.1); border: 1px solid var(--border-color); display: flex; flex-direction: column; transition: 0.3s; }
-        .concept-card:hover { transform: translateY(-5px); }
-        .concept-card img { width: 100%; height: 220px; object-fit: cover; }
-        .concept-card-content { padding: 20px; text-align: left; }
-        .concept-card-content h3 { color: #D4AF37; font-size: 22px; margin-bottom: 10px; }
-        .concept-card-content p { font-size: 14px; line-height: 1.5; color: #f1f1f1; opacity: 0.85; }
+        .section-title { text-align: center; font-size: 32px; margin-bottom: 40px; color: var(--terracotta); padding-top: 60px; }
 
-        /* =========== NEW PRICING SECTION CSS =========== */
-        .pricing-section { padding: 60px 5%; background-color: var(--bg-color); }
-        .pricing-header { text-align: center; margin-bottom: 40px; }
-        .pricing-header h2 { font-size: 32px; color: var(--terracotta); margin-bottom: 10px; }
-        .pricing-header p { font-size: 16px; color: var(--text-color); max-width: 800px; margin: 0 auto; opacity: 0.9; }
-        
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; justify-content: center; }
-        .pricing-card { background-color: var(--card-bg); border-radius: 15px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.1); display: flex; flex-direction: column; transition: 0.3s; border: 1px solid var(--border-color); position: relative; }
+        /* Pricing Section */
+        .pricing-section { padding: 60px 20px; background-color: #fff; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px;}
+        .pricing-card { background: #fff; border: 1px solid #ddd; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); display: flex; flex-direction: column; transition: transform 0.3s ease; }
         .pricing-card:hover { transform: translateY(-5px); }
-        .pricing-card.featured { border: 2px solid #D4AF37; transform: scale(1.03); z-index: 1; }
-        .pricing-card.featured:hover { transform: scale(1.03) translateY(-5px); }
-        .pricing-card.featured::before { content: 'Best Value'; position: absolute; top: 15px; right: -35px; background: #D4AF37; color: #000; padding: 5px 40px; transform: rotate(45deg); font-weight: bold; font-size: 12px; z-index: 2; box-shadow: 0 2px 5px rgba(0,0,0,0.3);}
-        
-        .pricing-card .card-img img { width: 100%; height: 180px; object-fit: cover; border-bottom: 2px solid var(--border-color); }
-        .pricing-card .card-content { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; }
-        .pricing-card h3 { font-size: 22px; color: #D4AF37; margin-bottom: 10px; }
-        .pricing-card .price { font-size: 24px; font-weight: bold; color: var(--terracotta); margin-bottom: 15px; }
-        .pricing-card .price .unit { font-size: 14px; color: var(--text-color); font-weight: normal; opacity: 0.8; }
-        .pricing-card p { font-size: 14px; line-height: 1.5; color: #f1f1f1; margin-bottom: 20px; opacity: 0.85; }
-        
-        .pricing-features { list-style: none; padding: 0; margin-bottom: 25px; flex-grow: 1; }
-        .pricing-features li { font-size: 14px; color: #f1f1f1; margin-bottom: 12px; padding-left: 25px; position: relative; opacity: 0.9; }
-        .pricing-features li::before { content: "✓"; color: #25D366; font-weight: bold; position: absolute; left: 0; font-size: 16px; }
-        
-        .btn-pricing { background: linear-gradient(135deg, #D35400, #E67E22); color: #fff; padding: 12px; border: none; border-radius: 6px; font-size: 15px; font-weight: bold; cursor: pointer; transition: 0.3s; text-align: center; text-decoration: none; width: 100%; margin-top: auto; }
-        .btn-pricing:hover { opacity: 0.9; box-shadow: 0 4px 15px rgba(211, 84, 0, 0.4); color: #fff;}
-        /* =============================================== */
+        .pricing-card.featured { border: 2px solid #D4AF37; }
+        .card-img img { width: 100%; height: 200px; object-fit: cover; }
+        .card-content { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; }
+        .card-content h3 { font-size: 22px; color: var(--navy-blue); margin-bottom: 10px; }
+        .price { font-size: 24px; font-weight: bold; color: var(--terracotta); margin-bottom: 15px; }
+        .price .unit { font-size: 14px; color: #666; font-weight: normal; }
+        .card-content p { font-size: 14px; color: #555; line-height: 1.6; margin-bottom: 20px; }
+        .features { list-style: none; padding: 0; margin-bottom: 25px; }
+        .features li { font-size: 14px; color: #333; margin-bottom: 10px; padding-left: 25px; position: relative; }
+        .features li::before { content: "✓"; color: #27ae60; font-weight: bold; position: absolute; left: 0; }
+        .btn-quote { background-color: var(--terracotta); color: #fff; padding: 12px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; transition: background-color 0.3s ease; align-self: center; width: 100%; text-decoration: none; text-align: center;}
+        .btn-quote:hover { background-color: #b34600; }
 
+        /* Reels Section */
         .reels-section { padding: 60px 0; background-color: var(--bg-color); text-align: center; overflow: hidden; }
         .marquee-wrapper { display: flex; width: 100%; overflow: hidden; white-space: nowrap; position: relative; margin-top: 25px; }
         .marquee-track { display: flex; gap: 30px; align-items: center; animation: scrollMarquee 25s linear infinite; }
@@ -127,7 +111,6 @@
         .reel-card video { width: 100%; height: 350px; object-fit: cover; border-radius: 8px; }
         .reel-card p { margin-top: 8px; font-size: 13px; font-weight: bold; color: #f1f1f1; white-space: normal; }
 
-        .section-title { text-align: center; font-size: 32px; margin-bottom: 40px; color: var(--terracotta); padding-top: 60px; }
         .service-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; padding: 0 5% 60px; }
         .service-card { background-color: var(--card-bg); color: #fff; padding: 30px; border-radius: 8px; width: 100%; max-width: 280px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-bottom: 4px solid #D4AF37; }
         .service-card h4 { margin-bottom: 15px; color: #D4AF37; font-size: 20px; }
@@ -153,6 +136,14 @@
         .whatsapp-float { position: fixed; width: 160px; height: 50px; bottom: 30px; right: 30px; background-color: var(--whatsapp-green); color: #fff; border-radius: 25px; display: flex; align-items: center; justify-content: center; font-weight: bold; text-decoration: none; z-index: 1000; box-shadow: 2px 2px 15px rgba(0,0,0,0.3); transition: 0.3s; }
         .whatsapp-float:hover { transform: scale(1.05); }
 
+        /* Floating Contact Bar */
+        .floating-contact-bar { position: fixed; bottom: 0; left: 0; width: 100%; background-color: var(--navy-blue); color: #fff; padding: 15px 20px; z-index: 1000; box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2); display: flex; justify-content: center; align-items: center; gap: 20px; }
+        .floating-contact-bar h3 { margin: 0; font-size: 18px; color: #D4AF37; }
+        .floating-contact-bar form { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+        .floating-contact-bar input { padding: 10px; border-radius: 5px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); color: #fff; width: 200px; }
+        .floating-contact-bar button { background-color: var(--terracotta); color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        .floating-contact-bar button:hover { opacity: 0.9; }
+
         @media (max-width: 768px) {
             .hero-content { flex-direction: column; text-align: center; }
             .hero-text { padding-right: 0; margin-bottom: 30px; }
@@ -164,10 +155,10 @@
             .slider-btn.next { right: 5px; }
             .hero-center-logo img { height: 75px; }
             .hero-center-logo h1 { font-size: 24px; }
-            
-            /* Pricing Mobile Adjustments */
-            .pricing-card.featured { transform: scale(1); margin-top: 15px; margin-bottom: 15px; }
-            .pricing-card.featured:hover { transform: translateY(-5px); }
+            .floating-contact-bar { flex-direction: column; gap: 10px; }
+            .floating-contact-bar form { flex-direction: column; width: 100%; }
+            .floating-contact-bar input { width: 100%; }
+            .pricing-section { padding-bottom: 100px; } /* Space for floating bar */
         }
     </style>
 </head>
@@ -176,10 +167,10 @@
     <header>
         <div class="brand-container">
             <a href="#" class="brand-logo">
-                <img id="dynamicLogoImg" src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Logo">
+                <img id="dynamicLogoImg" src="" alt="Logo">
             </a>
             <div class="brand-text-box">
-                <span class="brand-name" id="dynamicLogoText">GRIHANI HOMES</span>
+                <span class="brand-name" id="dynamicLogoText"></span>
                 <div class="header-social-icons">
                     <a href="https://facebook.com/yourpage" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://instagram.com/yourpage" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
@@ -190,7 +181,6 @@
         
         <nav>
             <a href="#">Home</a>
-
             <div class="dropdown">
                 <a href="designs.html">Design ▾</a>
                 <div class="dropdown-content">
@@ -202,7 +192,6 @@
                     <a href="designs.html?type=3d">3D Floor Plan</a>
                 </div>
             </div>
-
             <div class="dropdown">
                 <a href="construction.html">Construction ▾</a>
                 <div class="dropdown-content">
@@ -214,7 +203,6 @@
                     <a href="construction.html?type=mall">Mall Construction</a>
                 </div>
             </div>
-
             <div class="dropdown">
                 <a href="interiors.html">Interiors ▾</a>
                 <div class="dropdown-content">
@@ -224,12 +212,9 @@
                     <a href="interiors.html?type=academic">Academic Interior</a>
                 </div>
             </div>
-
-            <a href="#pricing">Pricing</a> <!-- नया Pricing बटन जोड़ा गया -->
             <a href="#services">Services</a>
             <a href="#gallery">Gallery</a>
             <a href="#contact">Contact Us</a>
-
             <div class="nav-buttons">
                 <button id="theme-toggle" class="action-btn">🌙 Dark</button>
             </div>
@@ -237,27 +222,20 @@
     </header>
 
     <section class="hero">
-        <video id="heroBgVideo" autoplay muted playsinline class="hero-video">
-            <!-- Video src added via JS -->
-        </video>
-
+        <video id="heroBgVideo" autoplay muted playsinline class="hero-video"></video>
         <button class="slider-btn prev" id="prevBtn" title="Previous Video">&#10094;</button>
         <button class="slider-btn next" id="nextBtn" title="Next Video">&#10095;</button>
-
         <div class="hero-overlay"></div>
-
         <div class="hero-center-logo">
-            <img id="heroLogoImg" src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Hero Logo">
-            <h1 id="heroLogoText">GRIHANI HOMES</h1>
+            <img id="heroLogoImg" src="" alt="Hero Logo">
+            <h1 id="heroLogoText"></h1>
         </div>
-
         <div class="hero-content">
             <div class="hero-text">
                 <h2>Strong Foundation, Great Design—Build Your Dream Home!</h2>
                 <p>Complete construction (with material) or labor contract—we complete every project with 100% quality.</p>
                 <a href="#services" class="btn-primary">View Our Services</a>
             </div>
-
             <div class="lead-form" id="contact">
                 <h3>Get Free Estimate!</h3>
                 <form id="contactForm">
@@ -271,123 +249,96 @@
         </div>
     </section>
 
-    <section class="concept-section" id="concepts">
-        <div class="concept-grid">
-            <div class="concept-card">
-                <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Design">
-                <div class="concept-card-content">
-                    <h3>Design</h3>
-                    <p>From floor plans to façade, our expert architects craft smart, aesthetic spaces tailored to your needs.</p>
-                </div>
-            </div>
-            <div class="concept-card">
-                <img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Construction">
-                <div class="concept-card-content">
-                    <h3>Construction</h3>
-                    <p>We take care of everything – delivering structurally sound, earthquake-resistant buildings.</p>
-                </div>
-            </div>
-            <div class="concept-card">
-                <img src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Interiors">
-                <div class="concept-card-content">
-                    <h3>Interiors</h3>
-                    <p>Our interior designers transform spaces into elegant, functional environments. From modular kitchens to custom finishes.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================== -->
-    <!-- NEW PRICING SECTION (Home Construction Cost)   -->
-    <!-- ============================================== -->
-    <section class="pricing-section" id="pricing">
-        <div class="pricing-header">
-            <h2>Home Construction Cost Per Sqft</h2>
-            <p>Average residential construction costs in Bihar can start from ₹1,250 to ₹4,000 per sqft depending on the quality of finishes.</p>
+    <!-- Pricing / Construction Cost Section -->
+    <section class="pricing-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" style="padding-top:0;">Home Construction Cost Per Sqft</h2>
+          <p style="text-align: center; color: #666; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">Average residential construction costs in Gurgaon can start from ₹1,250 to ₹4,500 per sqft depending on the quality of finishes.</p>
         </div>
 
         <div class="pricing-grid">
-            <!-- Basic Structure -->
-            <div class="pricing-card">
-                <div class="card-img">
-                    <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Basic Structure">
-                </div>
-                <div class="card-content">
-                    <h3>Basic Structure</h3>
-                    <div class="price">₹1,250 - ₹1,400 <span class="unit">/ sqft</span></div>
-                    <p>A budget package with no compromise on quality that includes all construction essentials.</p>
-                    <ul class="pricing-features">
-                        <li>Trusted brand steel & cement</li>
-                        <li>Standard flush doors and window finish</li>
-                        <li>Tractor Emulsion finish</li>
-                        <li>Essential kitchen & bathroom fittings</li>
-                    </ul>
-                    <a href="#contact" class="btn-pricing">GET A QUOTE</a>
-                </div>
+          <!-- Basic Structure -->
+          <div class="pricing-card">
+            <div class="card-img">
+              <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg" alt="Basic Structure">
             </div>
+            <div class="card-content">
+              <h3>Basic Structure</h3>
+              <div class="price">₹1,250 - ₹1,400 <span class="unit">/ sqft</span></div>
+              <p>A budget package with no compromise on quality that includes all construction essentials.</p>
+              <ul class="features">
+                <li>Trusted brand steel & cement</li>
+                <li>Standard flush doors and window finish</li>
+                <li>Tractor Emulsion finish</li>
+                <li>Essential kitchen & bathroom fittings</li>
+              </ul>
+              <a href="#contact" class="btn-quote">GET A QUOTE</a>
+            </div>
+          </div>
 
-            <!-- Basic Finishing -->
-            <div class="pricing-card">
-                <div class="card-img">
-                    <img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Basic Finishing">
-                </div>
-                <div class="card-content">
-                    <h3>Basic Finishing</h3>
-                    <div class="price">₹1,900 - ₹2,200 <span class="unit">/ sqft</span></div>
-                    <p>The Best Seller Package. Upgrade your home with trusted brands like Jindal Steel and Hardware at an affordable price.</p>
-                    <ul class="pricing-features">
-                        <li>Superior brand cement & steel</li>
-                        <li>Elegant teak doors and window finish</li>
-                        <li>Stylish kitchen & bathroom</li>
-                        <li>High-Grade Bricks</li>
-                    </ul>
-                    <a href="#contact" class="btn-pricing">GET A QUOTE</a>
-                </div>
+          <!-- Basic Finishing -->
+          <div class="pricing-card">
+            <div class="card-img">
+              <img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg" alt="Basic Finishing">
             </div>
+            <div class="card-content">
+              <h3>Basic Finishing</h3>
+              <div class="price">₹1,900 - ₹2,200 <span class="unit">/ sqft</span></div>
+              <p>The Best Seller Package. Upgrade your home with trusted brands like Jindal Steel and Hardware at an affordable price.</p>
+              <ul class="features">
+                <li>Superior brand cement & steel</li>
+                <li>Elegant teak doors and window finish</li>
+                <li>Stylish kitchen & bathroom</li>
+                <li>High-Grade Bricks</li>
+              </ul>
+              <a href="#contact" class="btn-quote">GET A QUOTE</a>
+            </div>
+          </div>
 
-            <!-- Advance Finishing (Featured/Highlighted) -->
-            <div class="pricing-card featured">
-                <div class="card-img">
-                    <img src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Advance Finishing">
-                </div>
-                <div class="card-content">
-                    <h3>Advance Finishing</h3>
-                    <div class="price">₹2,500 - ₹3,000 <span class="unit">/ sqft</span></div>
-                    <p>Designed for Modern Living. An elegant package with luxury additions, including solar heating setups.</p>
-                    <ul class="pricing-features">
-                        <li>Superior Brand steel & cement</li>
-                        <li>Designer teak doors and window finish</li>
-                        <li>Best quality bathroom & kitchen</li>
-                        <li>Textured Designer Paint</li>
-                        <li>AAC Blocks / High-Grade Bricks</li>
-                    </ul>
-                    <a href="#contact" class="btn-pricing">GET A QUOTE</a>
-                </div>
+          <!-- Advance Finishing -->
+          <div class="pricing-card featured">
+            <div class="card-img">
+              <img src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg" alt="Advance Finishing">
             </div>
+            <div class="card-content">
+              <h3>Advance Finishing</h3>
+              <div class="price">₹2,500 - ₹3,000 <span class="unit">/ sqft</span></div>
+              <p>Designed for Modern Living. An elegant package with luxury additions, including solar heating setups and dedicated pooja room doors.</p>
+              <ul class="features">
+                <li>Superior Brand steel & cement</li>
+                <li>Designer teak doors and window finish</li>
+                <li>Best quality bathroom & kitchen</li>
+                <li>Textured Designer Paint</li>
+                <li>AAC Blocks / High-Grade Bricks</li>
+              </ul>
+              <a href="#contact" class="btn-quote">GET A QUOTE</a>
+            </div>
+          </div>
 
-            <!-- Premium Finishing -->
-            <div class="pricing-card">
-                <div class="card-img">
-                    <img src="https://images.pexels.com/photos/2062423/pexels-photo-2062423.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Premium Finishing">
-                </div>
-                <div class="card-content">
-                    <h3>Premium Finishing</h3>
-                    <div class="price">₹3,200 - ₹4,000 <span class="unit">/ sqft</span></div>
-                    <p>Premium finishes meeting modern lifestyle features, from EV charging ports to secure connections.</p>
-                    <ul class="pricing-features">
-                        <li>Superior Brand steel & cement</li>
-                        <li>Designer teak doors and window finish</li>
-                        <li>Apex Ultima Exterior finish</li>
-                        <li>Lavish Fittings for kitchen & bathroom</li>
-                        <li>AAC Blocks / High-Grade Bricks</li>
-                        <li>Bespoke Designer Kitchen & Wardrobes</li>
-                    </ul>
-                    <a href="#contact" class="btn-pricing">GET A QUOTE</a>
-                </div>
+          <!-- Premium Finishing -->
+          <div class="pricing-card">
+            <div class="card-img">
+              <img src="https://images.pexels.com/photos/2062423/pexels-photo-2062423.jpeg" alt="Premium Finishing">
             </div>
+            <div class="card-content">
+              <h3>Premium Finishing</h3>
+              <div class="price">₹3,200 - ₹4,000 <span class="unit">/ sqft</span></div>
+              <p>Premium finishes meeting modern lifestyle features, from EV charging ports to secure copper gas connections.</p>
+              <ul class="features">
+                <li>Superior Brand steel & cement</li>
+                <li>Designer teak doors and window finish</li>
+                <li>Apex Ultima Exterior finish</li>
+                <li>Lavish Fittings for kitchen & bathroom</li>
+                <li>AAC Blocks / High-Grade Bricks</li>
+                <li>Bespoke Designer Kitchen & Wardrobes</li>
+              </ul>
+              <a href="#contact" class="btn-quote">GET A QUOTE</a>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
-    <!-- ============================================== -->
 
     <section class="reels-section" id="reels">
         <h2 class="section-title" style="padding-top: 0; margin-bottom: 10px;">Our Instagram Reels & Site Videos</h2>
@@ -435,69 +386,53 @@
 
     <a href="#" class="whatsapp-float" target="_blank" id="wa-float">💬 WhatsApp Now</a>
 
+    <!-- Floating Contact Bar -->
+    <div class="floating-contact-bar">
+      <h3>Build Your Dream Home Today</h3>
+      <form id="floatingContactForm">
+        <input type="text" id="floatName" placeholder="Your Name" required>
+        <input type="tel" id="floatPhone" placeholder="Phone Number" required>
+        <button type="submit">Get a Call</button>
+      </form>
+    </div>
+
     <script>
         // ==========================================
         // MEDIA CONTROL PANEL (यहाँ डायनेमिक लिंक्स पेस्ट करें)
         // ==========================================
 
-        const WHATSAPP_NUMBER = "918987263648"; // अपना व्हाट्सएप नंबर डालें
+        const WHATSAPP_NUMBER = "919876543210"; 
         const BRAND_NAME = "GRIHANI HOMES";
-        
-        // 👉 अपना लोगो यहाँ सेट करें (फ़ाइल का नाम जैसे "logo.png" या कोई लिंक डालें)
-        const LOGO_URL = "logo.png";
+        const LOGO_URL = "logo.png"; 
 
-        // 1. हीरो वीडियो लिंक्स
         const HERO_VIDEOS = [
             "https://res.cloudinary.com/eemp4pxt/video/upload/v1788081772/video1.mp4",
-        "https://res.cloudinary.com/eemp4pxt/video/upload/v1788082011/video2.mp4",
-        "https://res.cloudinary.com/eemp4pxt/video/upload/v1788082568/video3.mp4"   
-    ];
-
-        // 2. रील्स के वीडियो
-        const INSTAGRAM_REELS = [
-            { url: "https://res.cloudinary.com/eemp4pxt/video/upload/v1788081772/video1.mp4", caption: "Column casting work at site" },
-            { url: "https://res.cloudinary.com/eemp4pxt/video/upload/v1788082011/video2.mp4", caption: "Strong brickwork and quality inspection" },
-            { url: "https://res.cloudinary.com/eemp4pxt/video/upload/v1788082568/video3.mp4", caption: "Premium home finishing and design" }
+            "https://res.cloudinary.com/eemp4pxt/video/upload/v1788082011/video2.mp4",
+            "https://res.cloudinary.com/eemp4pxt/video/upload/v1788082568/video3.mp4"
         ];
 
-        // 3. गैलरी इमेजेज
+        const INSTAGRAM_REELS = [
+            { url: "https://res.cloudinary.com/eemp4pxt/video/upload/v1788081772/video1.mp4", caption: "Premium Construction Work" },
+            { url: "https://res.cloudinary.com/eemp4pxt/video/upload/v1788082011/video2.mp4", caption: "Strong Brickwork" },
+            { url: "https://res.cloudinary.com/eemp4pxt/video/upload/v1788082568/video3.mp4", caption: "Quality Inspection" }
+        ];
+
         const GALLERY_IMAGES = [
             "https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=600",
             "https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=600",
             "https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=600"
         ];
 
-        // 4. ब्रांड लोगो
         const BRANDS_LOGOS = [
-            "https://res.cloudinary.com/eemp4pxt/image/upload/v1788239098/Shyam.jpg",
-"https://res.cloudinary.com/eemp4pxt/image/upload/v1788239091/Dalmia.png",
-"https://res.cloudinary.com/eemp4pxt/image/upload/v1788239089/Somany.jpg",
-"https://res.cloudinary.com/eemp4pxt/image/upload/v1788239090/ultratech.png",
-"https://res.cloudinary.com/eemp4pxt/image/upload/v1788239089/tata-tiscon.webp",
-"https://res.cloudinary.com/eemp4pxt/image/upload/v1788239089/polycab.png",
-"https://res.cloudinary.com/eemp4pxt/image/upload/v1788239088/KAJARIA.png",
-"https://res.cloudinary.com/eemp4pxt/image/upload/v1788239089/parryware.jpg",
-"https://res.cloudinary.com/eemp4pxt/image/upload/v1788239088/johnson.jpg",
-"https://res.cloudinary.com/eemp4pxt/image/upload/v1788239088/kei.jpg",
-"https://res.cloudinary.com/eemp4pxt/image/upload/v1788239088/Acc.jpg",
-"https://res.cloudinary.com/eemp4pxt/image/upload/v1788239088/Jindal_Steel.png",
-"https://res.cloudinary.com/eemp4pxt/image/upload/v1788239087/kamdhenu-steel.png",
-"https://res.cloudinary.com/eemp4pxt/image/upload/v1788239087/dulux.jpg",
-"https://res.cloudinary.com/eemp4pxt/image/upload/v1788239087/cera.png",
-"https://res.cloudinary.com/eemp4pxt/image/upload/v1788239087/berger.jpg",
-"https://res.cloudinary.com/eemp4pxt/image/upload/v1788239087/birla.png",
-"https://res.cloudinary.com/eemp4pxt/image/upload/v1788239086/hindware.png",
-"https://res.cloudinary.com/eemp4pxt/image/upload/v1788239086/havells.png",
-"https://res.cloudinary.com/eemp4pxt/image/upload/v1788239086/asian.jpg",
-"https://res.cloudinary.com/eemp4pxt/image/upload/v1788239086/Anchor.jpg",
-"https://res.cloudinary.com/eemp4pxt/image/upload/v1788239086/eesco.jpg"
+            "https://images.pexels.com/photos/276514/pexels-photo-276514.jpeg?auto=compress&cs=tinysrgb&w=200",
+            "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=200",
+            "https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&cs=tinysrgb&w=200"
         ];
 
         // ==========================================
         // AUTO-GENERATION LOGIC (इसे न बदलें)
         // ==========================================
 
-        // लोगो और ब्रांड नेम अपडेट करें
         document.getElementById('dynamicLogoImg').src = LOGO_URL;
         document.getElementById('dynamicLogoText').textContent = BRAND_NAME;
         document.getElementById('heroLogoImg').src = LOGO_URL;
@@ -505,14 +440,12 @@
 
         document.getElementById('wa-float').href = `https://wa.me/${WHATSAPP_NUMBER}`;
 
-        // Theme Toggle
         const themeBtn = document.getElementById('theme-toggle');
         themeBtn.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
             themeBtn.innerText = document.body.classList.contains('dark-mode') ? '☀️ Light' : '🌙 Dark';
         });
 
-        // Setup Reels
         const reelsTrack = document.getElementById('reelsTrack');
         INSTAGRAM_REELS.concat(INSTAGRAM_REELS).forEach(reel => {
             let card = document.createElement('div');
@@ -521,7 +454,6 @@
             reelsTrack.appendChild(card);
         });
 
-        // Setup Gallery
         window.openLightbox = function(src) {
             document.getElementById('lightbox').style.display = 'flex';
             document.getElementById('lightbox-img').src = src;
@@ -537,7 +469,6 @@
             galleryContainer.appendChild(img);
         });
 
-        // Setup Brands
         const brandsTrack = document.getElementById('brandsTrack');
         BRANDS_LOGOS.concat(BRANDS_LOGOS).forEach(logo => {
             let item = document.createElement('div');
@@ -546,7 +477,6 @@
             brandsTrack.appendChild(item);
         });
 
-        // Setup Form
         const projectList = ["New House (With Material)", "New House (Labor Contract)", "Commercial Building", "Apartment", "Hospital", "College", "Home Renovation"];
         const projectSelect = document.getElementById('projectType');
         projectList.forEach(function(project) {
@@ -566,7 +496,16 @@
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
         });
 
-        // Hero Video Navigation
+        // Floating Contact Form Handler
+        document.getElementById('floatingContactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('floatName').value;
+            var phone = document.getElementById('floatPhone').value;
+            alert("Thank you " + name + ". We will contact you soon on " + phone);
+            // You can integrate this with a real backend or WhatsApp API as needed
+            this.reset();
+        });
+
         let currentVideo = 0;
         const bgVideo = document.getElementById('heroBgVideo');
         bgVideo.src = HERO_VIDEOS[currentVideo];
