@@ -22,7 +22,22 @@
             --card-bg: #1e1e1e;
             --navy-blue: #0b1528;
         }
-
+            /* Dark Mode Fix for Pricing & Plan Your Project Sections */
+            body.dark-mode .pricing-section { background-color: #121212; }
+            body.dark-mode .pricing-section p,
+            body.dark-mode .plan-project-section p { color: #cccccc !important; }
+            body.dark-mode .pricing-card { background-color: #1e1e1e; border-color: #333333; }
+            body.dark-mode .card-content h3 { color: var(--gold); }
+            body.dark-mode .card-content p,
+            body.dark-mode .features li { color: #dddddd; }
+            body.dark-mode .price .unit { color: #aaaaaa; }
+            
+            body.dark-mode .plan-project-section { background-color: #181818; }
+            body.dark-mode .plan-form-container { background-color: #1e1e1e; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+            body.dark-mode .plan-form-container input,
+            body.dark-mode .plan-form-container textarea { background-color: #2a2a2a; color: #ffffff; border-color: #444444; }
+            body.dark-mode .plan-form-container input::placeholder,
+            body.dark-mode .plan-form-container textarea::placeholder { color: #aaaaaa; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: var(--bg-color); color: var(--text-color); transition: background 0.3s, color 0.3s; scroll-behavior: smooth; }
 
@@ -142,37 +157,24 @@
         #lightbox img { max-width: 90%; max-height: 90%; border-radius: 8px; }
         #lightbox-close { position: absolute; top: 20px; right: 40px; color: white; font-size: 40px; cursor: pointer; }
 
-        footer { background: linear-gradient(135deg, #050b14 0%, #101c30 100%); color: #fff; text-align: center; padding: 30px 20px 100px; border-top: 2px solid var(--gold); line-height: 1.8; }
+        footer { background: linear-gradient(135deg, #050b14 0%, #101c30 100%); color: #fff; text-align: center; padding: 35px 20px; border-top: 2px solid var(--gold); line-height: 1.8; }
         .footer-links { margin: 12px 0; }
         .footer-links a { color: var(--gold); text-decoration: none; margin: 0 12px; font-size: 14px; font-weight: 500; }
         .footer-links a:hover { text-decoration: underline; }
 
-        .whatsapp-float { position: fixed; width: 160px; height: 52px; bottom: 85px; right: 25px; background: linear-gradient(135deg, #25D366, #128C7E); color: #fff; border-radius: 30px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 16px; letter-spacing: 0.5px; text-decoration: none; z-index: 1001; box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4); border: 2px solid rgba(255, 255, 255, 0.8); animation: bouncePulse 2.5s infinite; transition: 0.3s ease; }
+        .whatsapp-float { position: fixed; width: 160px; height: 52px; bottom: 25px; right: 25px; background: linear-gradient(135deg, #25D366, #128C7E); color: #fff; border-radius: 30px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 16px; letter-spacing: 0.5px; text-decoration: none; z-index: 1001; box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4); border: 2px solid rgba(255, 255, 255, 0.8); animation: bouncePulse 2.5s infinite; transition: 0.3s ease; }
         .whatsapp-float i { margin-right: 8px; font-size: 22px; }
         .whatsapp-float:hover { transform: scale(1.08) translateY(-3px); box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6); }
         @keyframes bouncePulse { 0% { transform: scale(1); box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4); } 50% { transform: scale(1.03); box-shadow: 0 8px 25px rgba(37, 211, 102, 0.7); } 100% { transform: scale(1); box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4); } }
-
-        .floating-contact-bar { position: fixed; bottom: -100px; left: 0; width: 100%; background: rgba(10, 17, 40, 0.95); backdrop-filter: blur(10px); border-top: 2px solid var(--gold); color: #fff; padding: 12px 20px; z-index: 1000; box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.4); display: flex; justify-content: center; align-items: center; gap: 25px; transition: bottom 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); }
-        .floating-contact-bar.show { bottom: 0; }
-        .floating-contact-bar h3 { margin: 0; font-size: 17px; color: #fff; letter-spacing: 0.5px;}
-        .floating-contact-bar form { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
-        .floating-contact-bar input { padding: 10px 15px; border-radius: 30px; border: 1px solid rgba(212, 175, 55, 0.4); background: rgba(255,255,255,0.08); color: #fff; width: 200px; font-size: 13.5px; transition: 0.3s; }
-        .floating-contact-bar input:focus { border-color: var(--gold); outline: none; background: rgba(255,255,255,0.15); }
-        .floating-contact-bar input::placeholder { color: #aaa; }
-        .floating-contact-bar button { background: var(--gold); color: #000; padding: 10px 25px; border: none; border-radius: 30px; cursor: pointer; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; box-shadow: 0 4px 10px rgba(212, 175, 55, 0.4); }
-        .floating-contact-bar button:hover { background: #fff; color: var(--gold); transform: translateY(-2px); }
 
         @media (max-width: 768px) {
             .hero-content { flex-direction: column; text-align: center; }
             .hero-text { min-width: 100%; }
             .special-offer-card { margin: 0 auto 25px; }
             header { flex-direction: column; gap: 12px; padding: 12px 20px; }
-            .whatsapp-float { width: 56px; height: 56px; border-radius: 50%; bottom: 200px; right: 18px; padding: 0; justify-content: center; }
+            .whatsapp-float { width: 56px; height: 56px; border-radius: 50%; bottom: 25px; right: 18px; padding: 0; justify-content: center; }
             .whatsapp-float span { display: none; }
             .whatsapp-float i { margin: 0; font-size: 30px; }
-            .floating-contact-bar { flex-direction: column; gap: 10px; text-align: center; padding: 15px; }
-            .floating-contact-bar form { flex-direction: column; width: 100%; }
-            .floating-contact-bar input, .floating-contact-bar button { width: 100%; }
         }
     </style>
 </head>
@@ -422,15 +424,6 @@
         <i class="fab fa-whatsapp"></i> <span>Chat Now</span>
     </a>
 
-    <div class="floating-contact-bar" id="floatingBar">
-      <h3>Build Your Dream Home Today</h3>
-      <form id="floatingContactForm">
-        <input type="text" id="floatName" placeholder="Your Name" required>
-        <input type="tel" id="floatPhone" placeholder="Phone Number" required>
-        <button type="submit">Get a Call</button>
-      </form>
-    </div>
-
     <script>
         const WHATSAPP_NUMBER = "918987263648"; 
         const BRAND_NAME = "GRIHANI HOMES";
@@ -445,7 +438,7 @@
         const INSTAGRAM_REELS = [
             { url: "https://ik.imagekit.io/grihanihomes/video1.mp4", caption: "Premium Construction Work" },
             { url: "https://ik.imagekit.io/grihanihomes/video2.mp4", caption: "Strong Brickwork" },
-            { url: "https://ik.imagekit.io/grihanihomes/video3", caption: "Quality Inspection" }
+            { url: "https://ik.imagekit.io/grihanihomes/video3.mp4", caption: "Quality Inspection" }
         ];
 
         const GALLERY_IMAGES = [
@@ -485,12 +478,6 @@
         document.getElementById('dynamicLogoText').textContent = BRAND_NAME;
         document.getElementById('heroLogoImg').src = LOGO_URL;
         document.getElementById('heroLogoText').textContent = BRAND_NAME;
-
-        const floatingBar = document.getElementById('floatingBar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 450) floatingBar.classList.add('show');
-            else floatingBar.classList.remove('show');
-        });
 
         const themeBtn = document.getElementById('theme-toggle');
         themeBtn.addEventListener('click', () => {
@@ -546,15 +533,6 @@
             var city = document.getElementById('userCity').value;
             var message = `*New Lead from Grihani Homes*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Project:* ${encodeURIComponent(project)}%0A*City:* ${encodeURIComponent(city)}`;
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
-        });
-
-        document.getElementById('floatingContactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var name = document.getElementById('floatName').value;
-            var phone = document.getElementById('floatPhone').value;
-            var message = `*Callback Request - Grihani Homes*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}`;
-            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
-            this.reset();
         });
 
         document.getElementById('planYourProjectForm').addEventListener('submit', function(e) {
