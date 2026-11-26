@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Services - Grihani Homes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f8f9fa; color: #333; line-height: 1.6; }
+        header { background: #080E1A; border-bottom: 2px solid #D4AF37; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .brand { font-size: 22px; font-weight: 900; color: #D4AF37; text-decoration: none; letter-spacing: 1.5px; }
+        nav a { color: #fff; text-decoration: none; margin-left: 18px; font-size: 14px; font-weight: 500; }
+        nav a:hover, nav a.active { color: #D4AF37; }
+        .page-banner { background: linear-gradient(135deg, #080E1A, #1A2B4C); color: #fff; text-align: center; padding: 55px 20px; border-bottom: 3px solid #D4AF37; }
+        .page-banner h1 { font-size: 34px; color: #D4AF37; margin-bottom: 10px; }
+        .container { max-width: 1150px; margin: 40px auto; padding: 0 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 25px; }
+        .card { background: #fff; padding: 28px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-top: 4px solid #0A1128; transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
+        .card:hover { transform: translateY(-4px); }
+        .card.highlight { border-top: 4px solid #D35400; box-shadow: 0 0 22px rgba(212, 175, 55, 0.55); background: #fffdf5; }
+        .card i { font-size: 30px; color: #D35400; margin-bottom: 12px; }
+        .card h2 { color: #0A1128; font-size: 21px; margin-bottom: 10px; }
+        .card p { font-size: 14px; color: #555; margin-bottom: 18px; }
+        .btn { display: inline-block; background: #D35400; color: #fff; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 14px; text-align: center; }
+        .btn:hover { background: #b34600; }
+        footer { background: #080E1A; color: #fff; text-align: center; padding: 25px; border-top: 2px solid #D4AF37; margin-top: 50px; }
+        footer a { color: #D4AF37; text-decoration: none; margin: 0 10px; font-size: 14px; }
+        @media (max-width: 768px) { header { flex-direction: column; gap: 10px; padding: 15px 20px; } }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="brand">GRIHANI HOMES</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="designs.html">Design</a>
+            <a href="construction.html" class="active">Construction</a>
+            <a href="interiors.html">Interiors</a>
+            <a href="index.html#plan-project">Contact</a>
+        </nav>
+    </header>
+
+    <div class="page-banner">
+        <h1>Turnkey & Labour Contract Construction</h1>
+        <p>Quality Residential, Commercial & Institutional Construction in Patna, Varanasi & Across Bihar/UP</p>
+    </div>
+
+    <div class="container">
+        <div class="grid">
+            <div class="card" id="residential">
+                <div>
+                    <i class="fas fa-home"></i>
+                    <h2>Residential Construction</h2>
+                    <p>Independent houses, duplexes, villas, and apartments built with Tata/Jindal TMT steel, UltraTech/ACC cement, and on-time delivery.</p>
+                </div>
+                <a href="https://wa.me/918987263648?text=Hi%20Grihani%20Homes,%20I%20want%20to%20discuss%20Residential%20Construction." target="_blank" class="btn">Request Quote</a>
+            </div>
+
+            <div class="card" id="commercial">
+                <div>
+                    <i class="fas fa-building"></i>
+                    <h2>Commercial Construction</h2>
+                    <p>Office complexes, showrooms, and retail spaces engineered for durability, modern facades, and high footfall.</p>
+                </div>
+                <a href="https://wa.me/918987263648?text=Hi%20Grihani%20Homes,%20I%20want%20to%20discuss%20Commercial%20Construction." target="_blank" class="btn">Request Quote</a>
+            </div>
+
+            <div class="card" id="academic">
+                <div>
+                    <i class="fas fa-university"></i>
+                    <h2>Academic Construction</h2>
+                    <p>Schools, colleges, coaching institutes, and hostel buildings executed on turnkey or labour-contract basis with strict safety standards.</p>
+                </div>
+                <a href="https://wa.me/918987263648?text=Hi%20Grihani%20Homes,%20I%20want%20to%20discuss%20Academic%20Construction." target="_blank" class="btn">Request Quote</a>
+            </div>
+
+            <div class="card" id="hospital">
+                <div>
+                    <i class="fas fa-hospital"></i>
+                    <h2>Hospital Construction</h2>
+                    <p>Clinics, nursing homes, and multi-specialty hospitals planned with hygienic layouts, ramps, lifts, and utility spaces.</p>
+                </div>
+                <a href="https://wa.me/918987263648?text=Hi%20Grihani%20Homes,%20I%20want%20to%20discuss%20Hospital%20Construction." target="_blank" class="btn">Request Quote</a>
+            </div>
+
+            <div class="card" id="hotel">
+                <div>
+                    <i class="fas fa-hotel"></i>
+                    <h2>Hotel Construction</h2>
+                    <p>Boutique hotels, banquet halls, and guest houses designed for comfort, elegant elevation, and efficient room planning.</p>
+                </div>
+                <a href="https://wa.me/918987263648?text=Hi%20Grihani%20Homes,%20I%20want%20to%20discuss%20Hotel%20Construction." target="_blank" class="btn">Request Quote</a>
+            </div>
+
+            <div class="card" id="mall">
+                <div>
+                    <i class="fas fa-store-alt"></i>
+                    <h2>Mall & Shopping Complex</h2>
+                    <p>Multi-floor shopping complexes with basement parking, wide corridors, heavy-load slabs, and modern glass elevations.</p>
+                </div>
+                <a href="https://wa.me/918987263648?text=Hi%20Grihani%20Homes,%20I%20want%20to%20discuss%20Mall%20Construction." target="_blank" class="btn">Request Quote</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Grihani Homes</strong> | Ramkrishna Nagar, Patna, Bihar & Varanasi, UP | +91 89872 63648</p>
+        <p style="margin: 10px 0;">
+            <a href="index.html">Home</a> |
+            <a href="about.html">About Us</a> |
+            <a href="privacy-policy.html">Privacy Policy</a> |
+            <a href="terms.html">Terms & Conditions</a>
+        </p>
+        <p style="font-size: 13px; color: #aaa;">&copy; 2026 Grihani Homes. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const type = params.get('type');
+        if (type) {
+            const target = document.getElementById(type);
+            if (target) {
+                target.classList.add('highlight');
+                target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+    </script>
+</body>
+</html>
