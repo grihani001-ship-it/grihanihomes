@@ -3,103 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grihani Homes - Services</title>
+    <title>Architectural Designs & Plans - Grihani Homes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --bg-color: #f8f9fa; --text-color: #333; --navy-blue: #0A1128; --terracotta: #D35400; --border-color: #D4AF37; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-color); transition: 0.3s; }
-
-        header {
-            background: #080E1A; border-bottom: 2px solid var(--border-color);
-            color: #fff; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center;
-        }
-        .brand-name { font-size: 22px; font-weight: 900; background: linear-gradient(to bottom, #FFE599, #D4AF37); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
-        .back-home { color: #fff; text-decoration: none; font-size: 14px; border: 1px solid var(--border-color); padding: 6px 15px; border-radius: 5px; transition: 0.3s; }
-        .back-home:hover { background: var(--border-color); color: #000; }
-
-        .page-banner {
-            background: linear-gradient(rgba(5,11,20,0.8), rgba(5,11,20,0.8)), url('https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1200');
-            background-size: cover; background-position: center;
-            color: #fff; text-align: center; padding: 80px 20px;
-        }
-        .page-banner h1 { font-size: 40px; color: #D4AF37; margin-bottom: 15px; text-transform: uppercase; }
-        .page-banner p { font-size: 18px; max-width: 700px; margin: 0 auto; color: #ddd; }
-
-        .content-section { max-width: 900px; margin: 50px auto; padding: 0 20px; text-align: center; }
-        .content-section h3 { font-size: 28px; color: var(--terracotta); margin-bottom: 20px; }
-        .content-section p { font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 30px; }
-        
-        .cta-box { background: #0A1128; color: #fff; padding: 40px; border-radius: 10px; border: 1px solid var(--border-color); margin-top: 40px; }
-        .cta-box h4 { font-size: 24px; color: #D4AF37; margin-bottom: 15px; }
-        .cta-btn { display: inline-block; background: var(--terracotta); color: #fff; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 15px; }
-
-        footer { background: #080E1A; color: #fff; text-align: center; padding: 20px; margin-top: 80px; border-top: 2px solid var(--border-color); }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f8f9fa; color: #333; line-height: 1.6; }
+        header { background: #080E1A; border-bottom: 2px solid #D4AF37; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .brand { font-size: 22px; font-weight: 900; color: #D4AF37; text-decoration: none; letter-spacing: 1.5px; }
+        nav a { color: #fff; text-decoration: none; margin-left: 18px; font-size: 14px; font-weight: 500; }
+        nav a:hover, nav a.active { color: #D4AF37; }
+        .page-banner { background: linear-gradient(135deg, #080E1A, #1A2B4C); color: #fff; text-align: center; padding: 55px 20px; border-bottom: 3px solid #D4AF37; }
+        .page-banner h1 { font-size: 34px; color: #D4AF37; margin-bottom: 10px; }
+        .container { max-width: 1150px; margin: 40px auto; padding: 0 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 25px; }
+        .card { background: #fff; padding: 28px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-top: 4px solid #0A1128; transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
+        .card:hover { transform: translateY(-4px); }
+        .card.highlight { border-top: 4px solid #D35400; box-shadow: 0 0 22px rgba(212, 175, 55, 0.55); background: #fffdf5; }
+        .card i { font-size: 30px; color: #D35400; margin-bottom: 12px; }
+        .card h2 { color: #0A1128; font-size: 21px; margin-bottom: 10px; }
+        .card p { font-size: 14px; color: #555; margin-bottom: 18px; }
+        .btn { display: inline-block; background: #D35400; color: #fff; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 14px; text-align: center; }
+        .btn:hover { background: #b34600; }
+        footer { background: #080E1A; color: #fff; text-align: center; padding: 25px; border-top: 2px solid #D4AF37; margin-top: 50px; }
+        footer a { color: #D4AF37; text-decoration: none; margin: 0 10px; font-size: 14px; }
+        @media (max-width: 768px) { header { flex-direction: column; gap: 10px; padding: 15px 20px; } }
     </style>
 </head>
 <body>
-
     <header>
-        <a href="grihanihomes.html" class="brand-name">GRIHANI HOMES</a>
-        <a href="grihanihomes.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        <a href="index.html" class="brand">GRIHANI HOMES</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="designs.html" class="active">Design</a>
+            <a href="construction.html">Construction</a>
+            <a href="interiors.html">Interiors</a>
+            <a href="index.html#plan-project">Contact</a>
+        </nav>
     </header>
 
     <div class="page-banner">
-        <h1 id="pageTitle">Loading...</h1>
-        <p id="pageDesc">Please wait while we fetch your requested service details.</p>
+        <h1>Architectural Design & Planning</h1>
+        <p>Vastu-Friendly 2D Floor Plans, Structural Drawings & 3D Elevations for Your Dream Project</p>
     </div>
 
-    <div class="content-section">
-        <h3 id="subHeading">Excellence in Every Brick & Detail</h3>
-        <p id="detailText">Grihani Homes delivers uncompromised quality, structural integrity, and modern aesthetics tailored precisely to your requirements. Contact us today to start your dream project.</p>
-        
-        <div class="cta-box">
-            <h4>Want a Free Estimate for this Project?</h4>
-            <p style="color: #ccc;">Get in touch with our expert engineers and architects right now via WhatsApp.</p>
-            <a href="grihanihomes.html#contact" class="cta-btn">Get Free Estimate ➔</a>
+    <div class="container">
+        <div class="grid">
+            <div class="card" id="floor">
+                <div>
+                    <i class="fas fa-drafting-compass"></i>
+                    <h2>2D Floor Plan</h2>
+                    <p>Smart space utilization with Vastu-compliant room placement, ventilation, parking, and accurate plot dimensions.</p>
+                </div>
+                <a href="https://wa.me/918987263648?text=Hi%20Grihani%20Homes,%20I%20need%20a%202D%20Floor%20Plan." target="_blank" class="btn">Get Free Estimate</a>
+            </div>
+
+            <div class="card" id="structural">
+                <div>
+                    <i class="fas fa-layer-group"></i>
+                    <h2>Structural Plan</h2>
+                    <p>Detailed column, beam, footing, and slab reinforcement drawings engineered for earthquake resistance and long-term strength.</p>
+                </div>
+                <a href="https://wa.me/918987263648?text=Hi%20Grihani%20Homes,%20I%20need%20a%20Structural%20Plan." target="_blank" class="btn">Get Free Estimate</a>
+            </div>
+
+            <div class="card" id="plumbing">
+                <div>
+                    <i class="fas fa-faucet"></i>
+                    <h2>Plumbing Plan</h2>
+                    <p>Leak-proof water supply, drainage, rainwater harvesting, and overhead tank layouts designed for zero maintenance issues.</p>
+                </div>
+                <a href="https://wa.me/918987263648?text=Hi%20Grihani%20Homes,%20I%20need%20a%20Plumbing%20Plan." target="_blank" class="btn">Get Free Estimate</a>
+            </div>
+
+            <div class="card" id="electrical">
+                <div>
+                    <i class="fas fa-bolt"></i>
+                    <h2>Electrical Plan</h2>
+                    <p>Safe concealed wiring layouts, load distribution, inverter backup points, and modern lighting placement for every room.</p>
+                </div>
+                <a href="https://wa.me/918987263648?text=Hi%20Grihani%20Homes,%20I%20need%20an%20Electrical%20Plan." target="_blank" class="btn">Get Free Estimate</a>
+            </div>
+
+            <div class="card" id="hvac">
+                <div>
+                    <i class="fas fa-wind"></i>
+                    <h2>HVAC Plan</h2>
+                    <p>Efficient air-conditioning, exhaust, and natural cross-ventilation planning for homes, offices, and commercial spaces.</p>
+                </div>
+                <a href="https://wa.me/918987263648?text=Hi%20Grihani%20Homes,%20I%20need%20an%20HVAC%20Plan." target="_blank" class="btn">Get Free Estimate</a>
+            </div>
+
+            <div class="card" id="3d">
+                <div>
+                    <i class="fas fa-cube"></i>
+                    <h2>3D Floor Plan & Elevation</h2>
+                    <p>Photorealistic 3D front elevation and interior walkthroughs so you can visualize your complete home before construction starts.</p>
+                </div>
+                <a href="https://wa.me/918987263648?text=Hi%20Grihani%20Homes,%20I%20need%20a%203D%20Floor%20Plan." target="_blank" class="btn">Get Free Estimate</a>
+            </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Grihani Homes. All Rights Reserved.</p>
+        <p><strong>Grihani Homes</strong> | Ramkrishna Nagar, Patna, Bihar & Varanasi, UP | +91 89872 63648</p>
+        <p style="margin: 10px 0;">
+            <a href="index.html">Home</a> |
+            <a href="about.html">About Us</a> |
+            <a href="privacy-policy.html">Privacy Policy</a> |
+            <a href="terms.html">Terms & Conditions</a>
+        </p>
+        <p style="font-size: 13px; color: #aaa;">&copy; 2026 Grihani Homes. All Rights Reserved.</p>
     </footer>
 
     <script>
-        // URL से पहचानना कि किस सब-ऑप्शन पर क्लिक किया गया है
-        const urlParams = new URLSearchParams(window.location.search);
-        const type = urlParams.get('type');
-
-        const data = {
-            // Construction Options
-            "residential": { title: "Residential Construction", desc: "Building strong, beautiful, and personalized homes tailored for your family." },
-            "commercial": { title: "Commercial Construction", desc: "High-performance offices, retail spaces, and complexes designed for business success." },
-            "academic": { title: "Academic Construction", desc: "Safe, spacious, and modern educational institutions, schools, and colleges." },
-            "hospital": { title: "Hospital Construction", desc: "Specialized healthcare infrastructure built with precision, hygiene, and safety norms." },
-            "hotel": { title: "Hotel Construction", desc: "Luxurious, aesthetic, and welcoming hospitality spaces built to impress guests." },
-            "mall": { title: "Mall Construction", desc: "Large-scale retail and entertainment hubs engineered for massive footfall." },
-
-            // Design Options
-            "floor": { title: "Floor Plan", desc: "Smart, space-efficient, and Vastu-compliant 2D layout planning." },
-            "structural": { title: "Structural Plan", desc: "Earthquake-resistant, high-strength structural design engineered by experts." },
-            "plumbing": { title: "Plumbing Plan", desc: "Advanced water supply, drainage, and leakage-free pipeline layouts." },
-            "electrical": { title: "Electrical Plan", desc: "Safe, load-calculated wiring and smart lighting blueprints." },
-            "hvac": { title: "HVAC Plan", desc: "Optimized heating, ventilation, and air conditioning system layouts." },
-            "3d": { title: "3D Floor Plan", realistic: true, title: "3D Floor Plan", desc: "Lifelike 3D visual walkthroughs of your future home before construction begins." },
-
-            // Interior Options
-            "residential-int": { title: "Residential Interior", desc: "Stunning living rooms, modular kitchens, and cozy bedrooms tailored to your lifestyle." },
-            "commercial-int": { title: "Commercial Interior", desc: "Professional and inspiring corporate interiors that boost productivity." },
-            "hospitality-int": { title: "Hospitality Interior", desc: "Exquisite interiors for hotels, cafes, and restaurants offering great client experiences." },
-            "academic-int": { title: "Academic Interior", desc: "Engaging and creative interiors designed specifically for schools and learning centers." }
-        };
-
-        if (type && data[type]) {
-            document.getElementById('pageTitle').textContent = data[type].title;
-            document.getElementById('pageDesc').textContent = data[type].desc;
-            document.title = data[type].title + " - Grihani Homes";
-        } else {
-            document.getElementById('pageTitle').textContent = "Our Professional Services";
-            document.getElementById('pageDesc').textContent = "Explore our wide range of expert construction, design, and interior solutions.";
+        const params = new URLSearchParams(window.location.search);
+        const type = params.get('type');
+        if (type) {
+            const target = document.getElementById(type);
+            if (target) {
+                target.classList.add('highlight');
+                target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
         }
     </script>
 </body>
